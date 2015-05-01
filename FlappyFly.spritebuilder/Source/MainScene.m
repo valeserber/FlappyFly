@@ -26,10 +26,18 @@ static const CGFloat scrollSpeed = 80.f;
             ground.position = ccp(ground.position.x + 3.5 * ground.contentSize.width, ground.position.y);
         }
     }
+    // clamp velocity
+    float yVelocity = clampf(_hero.physicsBody.velocity.y, -1 * MAXFLOAT, 200.f);
+    _hero.physicsBody.velocity = ccp(0, yVelocity);
 }
 
 - (void)didLoadFromCCB {
     _grounds = @[_ground1, _ground2, _ground3, _ground4];
+    self.userInteractionEnabled = TRUE;
+}
+
+- (void)touchBegan:(UITouch *)touch withEvent:(UIEvent *)event {
+    [_hero.physicsBody applyImpulse:ccp(0, 400.f)];
 }
 
 @end
