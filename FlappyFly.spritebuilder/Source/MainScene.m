@@ -1,6 +1,8 @@
 #import "MainScene.h"
 
 static const CGFloat scrollSpeed = 80.f;
+static const CGFloat firstObstaclePosition = 280.f;
+static const CGFloat distanceBetweenObstacles = 160.f;
 
 @implementation MainScene {
     CCSprite *_hero;
@@ -10,9 +12,14 @@ static const CGFloat scrollSpeed = 80.f;
     CCNode *_ground3;
     CCNode *_ground4;
     NSArray *_grounds;
+    BOOL _impulse;
+    NSMutableArray *_obstacles;
 }
 
 - (void)update:(CCTime)delta {
+    if(_impulse==true){
+        [_hero.physicsBody applyImpulse:ccp(0, 20.f)];
+    }
     _hero.position = ccp(_hero.position.x + delta * scrollSpeed, _hero.position.y);
     _physicsNode.position = ccp(_physicsNode.position.x - (scrollSpeed *delta), _physicsNode.position.y);
     // loop the ground
@@ -31,13 +38,32 @@ static const CGFloat scrollSpeed = 80.f;
     _hero.physicsBody.velocity = ccp(0, yVelocity);
 }
 
+- (void)spawnNewObstacle {
+    CCNode *previousObstacle = [_obstacles lastObject];
+    CGFloat previousObstacleXPosition = previousObstacle.position.x;
+    if (!previousObstacle) {
+        // this is the first obstacle
+        previousObstacleXPosition = firstObstaclePosition;
+    }
+    CCNode *obstacle = [CCBReader load:@"Carnivorous"];
+    obstacle.position = ccp(previousObstacleXPosition + distanceBetweenObstacles, 0);
+    [_physicsNode addChild:obstacle];
+    [_obstacles addObject:obstacle];
+}
+
 - (void)didLoadFromCCB {
     _grounds = @[_ground1, _ground2, _ground3, _ground4];
     self.userInteractionEnabled = TRUE;
+    _obstacles = [NSMutableArray array];
+    [self spawnNewObstacle];
 }
 
 - (void)touchBegan:(UITouch *)touch withEvent:(UIEvent *)event {
-    [_hero.physicsBody applyImpulse:ccp(0, 400.f)];
+    _impulse=true;
+}
+
+-(void)touchEnded:(CCTouch *)touch withEvent:(CCTouchEvent *)event {
+    _impulse=false;
 }
 
 @end
