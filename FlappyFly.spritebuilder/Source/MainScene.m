@@ -14,11 +14,14 @@ static const CGFloat distanceBetweenObstacles = 160.f;
     NSArray *_grounds;
     BOOL _impulse;
     NSMutableArray *_obstacles;
+    NSTimeInterval _sinceTouch;
 }
 
 - (void)update:(CCTime)delta {
     if(_impulse==true){
-        [_hero.physicsBody applyImpulse:ccp(0, 20.f)];
+        [_hero.physicsBody applyImpulse:ccp(0, 100.f)];
+        [_hero.physicsBody applyAngularImpulse:300.f];
+        _sinceTouch = 0.f;
     }
     _hero.position = ccp(_hero.position.x + delta * scrollSpeed, _hero.position.y);
     _physicsNode.position = ccp(_physicsNode.position.x - (scrollSpeed *delta), _physicsNode.position.y);
@@ -36,6 +39,15 @@ static const CGFloat distanceBetweenObstacles = 160.f;
     // clamp velocity
     float yVelocity = clampf(_hero.physicsBody.velocity.y, -1 * MAXFLOAT, 200.f);
     _hero.physicsBody.velocity = ccp(0, yVelocity);
+    _sinceTouch += delta;
+    _hero.rotation = clampf(_hero.rotation, -10.f, 50.f);
+    if (_hero.physicsBody.allowsRotation) {
+        float angularVelocity = clampf(_hero.physicsBody.angularVelocity, -2.f, 1.f);
+        _hero.physicsBody.angularVelocity = angularVelocity;
+    }
+    if ((_sinceTouch > 0.5f)) {
+        [_hero.physicsBody applyAngularImpulse:-200.f*delta];
+    }
 }
 
 - (void)spawnNewObstacle {
