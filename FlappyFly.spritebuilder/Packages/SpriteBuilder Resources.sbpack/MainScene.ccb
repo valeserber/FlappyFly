@@ -10,7 +10,7 @@
 		<false/>
 	</dict>
 	<key>UUID</key>
-	<integer>43</integer>
+	<integer>47</integer>
 	<key>centeredOrigin</key>
 	<false/>
 	<key>currentResolution</key>
@@ -73,7 +73,7 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>268</real>
+							<real>275</real>
 							<real>160.60000610351562</real>
 							<integer>1</integer>
 							<integer>0</integer>
@@ -1001,7 +1001,7 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>0.0</real>
+							<real>-45.71148681640625</real>
 							<real>0.0</real>
 							<integer>0</integer>
 							<integer>0</integer>
@@ -1053,7 +1053,7 @@
 						<key>value</key>
 						<array>
 							<real>0.0</real>
-							<real>-100</real>
+							<real>-400</real>
 						</array>
 					</dict>
 					<dict>
@@ -1204,9 +1204,9 @@
 			<key>name</key>
 			<string>Default Timeline</string>
 			<key>offset</key>
-			<real>0.0</real>
+			<real>7.6484375</real>
 			<key>position</key>
-			<real>0.0</real>
+			<real>10</real>
 			<key>resolution</key>
 			<real>30</real>
 			<key>scale</key>
