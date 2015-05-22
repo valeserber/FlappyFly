@@ -3,7 +3,7 @@
 
 static const CGFloat scrollSpeed = 80.f;
 static const CGFloat firstObstaclePosition = 280.f;
-static const CGFloat distanceBetweenObstacles = 160.f;
+static const CGFloat distanceBetweenObstacles = 250.f;
 
 @implementation MainScene {
     CCSprite *_hero;
@@ -16,6 +16,7 @@ static const CGFloat distanceBetweenObstacles = 160.f;
     BOOL _impulse;
     NSMutableArray *_obstacles;
     NSTimeInterval _sinceTouch;
+    NSTimeInterval _sinceLastObstacle;
 }
 
 - (void)update:(CCTime)delta {
@@ -39,6 +40,7 @@ static const CGFloat distanceBetweenObstacles = 160.f;
     float yVelocity = clampf(_hero.physicsBody.velocity.y, -1 * MAXFLOAT, 200.f);
     _hero.physicsBody.velocity = ccp(0, yVelocity);
     _sinceTouch += delta;
+    _sinceLastObstacle += delta;
     _hero.rotation = clampf(_hero.rotation, -10.f, 50.f);
     if (_hero.physicsBody.allowsRotation) {
         float angularVelocity = clampf(_hero.physicsBody.angularVelocity, -2.f, 1.f);
@@ -47,21 +49,8 @@ static const CGFloat distanceBetweenObstacles = 160.f;
     if ((_sinceTouch > 0.5f)) {
         [_hero.physicsBody applyAngularImpulse:-200.f*delta];
     }
-    
-    NSMutableArray *offScreenObstacles = nil;
-    for (CCNode *obstacle in _obstacles) {
-        CGPoint obstacleWorldPosition = [_physicsNode convertToWorldSpace:obstacle.position];
-        CGPoint obstacleScreenPosition = [self convertToNodeSpace:obstacleWorldPosition];
-        if (obstacleScreenPosition.x < -obstacle.contentSize.width) {
-            if (!offScreenObstacles) {
-                offScreenObstacles = [NSMutableArray array];
-            }
-            [offScreenObstacles addObject:obstacle];
-        }
-    }
-    for (CCNode *obstacleToRemove in offScreenObstacles) {
-        [obstacleToRemove removeFromParent];
-        [_obstacles removeObject:obstacleToRemove];
+    if(_sinceLastObstacle >= 2.f){
+        _sinceLastObstacle = 0.f;
         [self spawnNewObstacle];
     }
 }
@@ -73,9 +62,8 @@ static const CGFloat distanceBetweenObstacles = 160.f;
     if (!previousObstacle) {
         previousObstacleXPosition = firstObstaclePosition;
     }
-    
     Obstacle *obstacle = (Obstacle *)[CCBReader load:@"Carnivorous"];
-    obstacle.position = ccp(previousObstacleXPosition + distanceBetweenObstacles, 0);
+    obstacle.position = ccp(previousObstacleXPosition+500.f, 0);
     obstacle.physicsBody = [CCPhysicsBody bodyWithRect:(CGRect){CGPointZero, obstacle.contentSize} cornerRadius:0];
     
     [_physicsNode addChild:obstacle];
@@ -88,6 +76,7 @@ static const CGFloat distanceBetweenObstacles = 160.f;
     _physicsNode.collisionDelegate = self;
     _hero.physicsBody.collisionType = @"heroCollision";
     _obstacles = [NSMutableArray array];
+    _sinceLastObstacle = 0.f;
     [self spawnNewObstacle];
     [self spawnNewObstacle];
     
