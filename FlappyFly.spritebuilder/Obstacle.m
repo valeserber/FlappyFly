@@ -7,3 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Obstacle.h"
+
+@implementation Obstacle {
+    CCNode *_obstacle;
+}
+
+-(void) didLoadFromCCB {
+    _obstacle.physicsBody.collisionType = @"ObstacleCollision";
+    _obstacle.physicsBody.sensor = TRUE;
+}
+
+@end

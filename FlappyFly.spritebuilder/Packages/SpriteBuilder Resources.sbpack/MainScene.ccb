@@ -10,7 +10,7 @@
 		<false/>
 	</dict>
 	<key>UUID</key>
-	<integer>47</integer>
+	<integer>50</integer>
 	<key>centeredOrigin</key>
 	<false/>
 	<key>currentResolution</key>
@@ -253,8 +253,8 @@
 								<string>Position</string>
 								<key>value</key>
 								<array>
-									<real>98</real>
-									<real>203</real>
+									<real>275.28851318359375</real>
+									<real>206</real>
 									<integer>0</integer>
 									<integer>0</integer>
 									<integer>0</integer>
@@ -282,6 +282,8 @@
 								<string>Hero.ccb</string>
 							</dict>
 						</array>
+						<key>selected</key>
+						<true/>
 					</dict>
 					<dict>
 						<key>UUID</key>

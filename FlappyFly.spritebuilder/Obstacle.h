@@ -8,6 +8,10 @@
 
 #ifndef FlappyFly_Obstacle_h
 #define FlappyFly_Obstacle_h
+#import "CCNode.h"
 
+@interface Obstacle : CCNode
+
+@end
 
 #endif
