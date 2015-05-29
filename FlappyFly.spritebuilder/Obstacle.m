@@ -14,7 +14,7 @@
 }
 
 -(void) didLoadFromCCB {
-    _obstacle.physicsBody.collisionType = @"ObstacleCollision";
+    _obstacle.physicsBody.collisionType = @"obstacleCollision";
     _obstacle.physicsBody.sensor = TRUE;
 }
 

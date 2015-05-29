@@ -3,20 +3,28 @@
 
 static const CGFloat scrollSpeed = 80.f;
 static const CGFloat firstObstaclePosition = 280.f;
-static const CGFloat distanceBetweenObstacles = 250.f;
 
 @implementation MainScene {
-    CCSprite *_hero;
+    CCNode *_hero;
     CCPhysicsNode *_physicsNode;
     CCNode *_ground1;
     CCNode *_ground2;
     CCNode *_ground3;
     CCNode *_ground4;
+    CCButton *_restartButton;
+    CCNode *_health1;
+    CCNode *_health2;
+    CCNode *_health3;
+    CCNode *_health4;
+    CCNode *_health5;;
     NSArray *_grounds;
     BOOL _impulse;
     NSMutableArray *_obstacles;
+    NSMutableArray *_healthSprites;
     NSTimeInterval _sinceTouch;
     NSTimeInterval _sinceLastObstacle;
+    int _healthCount;
+    
 }
 
 - (void)update:(CCTime)delta {
@@ -62,21 +70,28 @@ static const CGFloat distanceBetweenObstacles = 250.f;
     if (!previousObstacle) {
         previousObstacleXPosition = firstObstaclePosition;
     }
-    Obstacle *obstacle = (Obstacle *)[CCBReader load:@"Carnivorous"];
-    obstacle.position = ccp(previousObstacleXPosition+500.f, 0);
-    obstacle.physicsBody = [CCPhysicsBody bodyWithRect:(CGRect){CGPointZero, obstacle.contentSize} cornerRadius:0];
+    CCNode *_obstacle = (CCNode *)[CCBReader load:@"Carnivorous3"];
+    _obstacle.position = ccp(previousObstacleXPosition+500.f, 0);
     
-    [_physicsNode addChild:obstacle];
-    [_obstacles addObject:obstacle];
+    
+    [_obstacles addObject:_obstacle];
+    [_physicsNode addChild:_obstacle];
 }
 
 - (void)didLoadFromCCB {
     _grounds = @[_ground1, _ground2, _ground3, _ground4];
-    self.userInteractionEnabled = TRUE;
+    self.userInteractionEnabled = YES;
+    _restartButton.visible = NO;
     _physicsNode.collisionDelegate = self;
-    _hero.physicsBody.collisionType = @"heroCollision";
     _obstacles = [NSMutableArray array];
     _sinceLastObstacle = 0.f;
+    _healthCount = 5;
+    _healthSprites = [NSMutableArray array];
+    [_healthSprites addObject:_health1];
+    [_healthSprites addObject:_health2];
+    [_healthSprites addObject:_health3];
+    [_healthSprites addObject:_health4];
+    [_healthSprites addObject:_health5];
     [self spawnNewObstacle];
     [self spawnNewObstacle];
     
@@ -91,8 +106,8 @@ static const CGFloat distanceBetweenObstacles = 250.f;
 }
 
 - (BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair *)pair heroCollision:(CCNode *)hero obstacleCollision:(CCNode *)obstacle {
-    [hero removeFromParent];
+    _healthCount--;
+    ((CCSprite*)[_healthSprites objectAtIndex:_healthCount]).visible = NO;
     return YES;
 }
-
 @end
