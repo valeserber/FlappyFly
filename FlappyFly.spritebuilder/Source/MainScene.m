@@ -2,7 +2,6 @@
 #import "Obstacle.h"
 
 static const CGFloat scrollSpeed = 80.f;
-static const CGFloat firstObstaclePosition = 280.f;
 
 @implementation MainScene {
     CCNode *_hero;
@@ -24,6 +23,7 @@ static const CGFloat firstObstaclePosition = 280.f;
     NSTimeInterval _sinceTouch;
     NSTimeInterval _sinceLastObstacle;
     int _healthCount;
+    int i;
     
 }
 
@@ -59,24 +59,18 @@ static const CGFloat firstObstaclePosition = 280.f;
     }
     if(_sinceLastObstacle >= 2.f){
         _sinceLastObstacle = 0.f;
-        [self spawnNewObstacle];
+        [self spawnNewObstacle: 200 *i++];
     }
 }
 
-- (void)spawnNewObstacle {
-    CCNode *previousObstacle = [_obstacles lastObject];
-    CGFloat previousObstacleXPosition = previousObstacle.position.x;
-    
-    if (!previousObstacle) {
-        previousObstacleXPosition = firstObstaclePosition;
-    }
+- (void)spawnNewObstacle: (int) x {
     CCNode *_obstacle = (CCNode *)[CCBReader load:@"Carnivorous3"];
-    _obstacle.position = ccp(previousObstacleXPosition+500.f, 0);
-    
-    
+    CGSize winSize = [CCDirector sharedDirector].viewSize;
+    CGPoint point = ccp(winSize.width + x, 75);
+    _obstacle.position = point;
     [_obstacles addObject:_obstacle];
     [_physicsNode addChild:_obstacle];
-}
+    }
 
 - (void)didLoadFromCCB {
     _grounds = @[_ground1, _ground2, _ground3, _ground4];
@@ -85,6 +79,7 @@ static const CGFloat firstObstaclePosition = 280.f;
     _physicsNode.collisionDelegate = self;
     _obstacles = [NSMutableArray array];
     _sinceLastObstacle = 0.f;
+    i=1;
     _healthCount = 5;
     _healthSprites = [NSMutableArray array];
     [_healthSprites addObject:_health1];
@@ -92,9 +87,6 @@ static const CGFloat firstObstaclePosition = 280.f;
     [_healthSprites addObject:_health3];
     [_healthSprites addObject:_health4];
     [_healthSprites addObject:_health5];
-    [self spawnNewObstacle];
-    [self spawnNewObstacle];
-    
 }
 
 - (void)touchBegan:(UITouch *)touch withEvent:(UIEvent *)event {
@@ -107,6 +99,9 @@ static const CGFloat firstObstaclePosition = 280.f;
 
 - (BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair *)pair heroCollision:(CCNode *)hero obstacleCollision:(CCNode *)obstacle {
     _healthCount--;
+    if (_healthCount == 0) {
+        return NO;
+    }
     ((CCSprite*)[_healthSprites objectAtIndex:_healthCount]).visible = NO;
     return YES;
 }
