@@ -18,14 +18,11 @@
     static NSArray *_names;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        _names = @[@"Carnivorous3",
-                    @"Their Move",
-                    @"Won Games",
-                    @"Lost Games",
-                    @"Options"];
+        _names = @[@"Carnivorous",
+                    @"Blacky"];
     });
-    [self randomNumberBetween:1 maxNumber: [_names count]];
-    return _names[0];
+    NSInteger r = [self randomNumberBetween:0 maxNumber: [_names count]];
+    return _names[r];
 }
 
 -(id) init {
@@ -42,7 +39,6 @@
 + (NSInteger)randomNumberBetween:(NSInteger)min maxNumber:(NSInteger)max
 {
     NSInteger r= min + arc4random_uniform((unsigned int)max);
-    NSLog(@"%ld",(long)r);
     return r;
 }
 
