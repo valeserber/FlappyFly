@@ -59,12 +59,12 @@ static const CGFloat scrollSpeed = 80.f;
     }
     if(_sinceLastObstacle >= 2.f){
         _sinceLastObstacle = 0.f;
-        [self spawnNewObstacle: 200 *i++];
+        [self spawnNewObstacle: 210 *i++];
     }
 }
 
 - (void)spawnNewObstacle: (int) x {
-    CCNode *_obstacle = (CCNode *)[CCBReader load:@"Carnivorous3"];
+    Obstacle *_obstacle = [[Obstacle alloc]init];
     CGSize winSize = [CCDirector sharedDirector].viewSize;
     CGPoint point = ccp(winSize.width + x, 75);
     _obstacle.position = point;

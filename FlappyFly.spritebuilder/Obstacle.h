@@ -12,6 +12,8 @@
 
 @interface Obstacle : CCNode
 
++ (NSInteger)randomNumberBetween:(NSInteger)min maxNumber:(NSInteger)max;
+
 @end
 
 #endif
