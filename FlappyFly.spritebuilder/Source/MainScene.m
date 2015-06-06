@@ -72,11 +72,12 @@ static const CGFloat scrollSpeed = 80.f;
 - (void)spawnNewObstacle: (int) x {
     Obstacle *_obstacle = [[Obstacle alloc]init];
     CGSize winSize = [CCDirector sharedDirector].viewSize;
-    CGPoint point = ccp(winSize.width + x, 75);
+    NSInteger r = [Obstacle randomNumberBetween: 0 maxNumber: 140];
+    CGPoint point = ccp(winSize.width + x + r, 75);
     _obstacle.position = point;
     [_obstacles addObject:_obstacle];
     [_physicsNode addChild:_obstacle];
-    }
+}
 
 - (void)didLoadFromCCB {
     _grounds = @[_ground1, _ground2, _ground3, _ground4];
