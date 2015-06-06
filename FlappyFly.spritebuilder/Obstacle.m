@@ -19,7 +19,8 @@
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         _names = @[@"Carnivorous",
-                    @"Blacky"];
+                    @"Blacky",
+                    @"Spiky"];
     });
     NSInteger r = [self randomNumberBetween:0 maxNumber: [_names count]];
     return _names[r];

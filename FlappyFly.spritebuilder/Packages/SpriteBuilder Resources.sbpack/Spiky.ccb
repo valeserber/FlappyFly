@@ -64,7 +64,7 @@
 									<integer>7</integer>
 									<key>value</key>
 									<array>
-										<string>FlappyFlyAssets/frame 3.png</string>
+										<string>FlappyFlyAssets/frame-1 14.png</string>
 										<string>Use regular file</string>
 									</array>
 								</dict>
@@ -82,25 +82,7 @@
 									<integer>7</integer>
 									<key>value</key>
 									<array>
-										<string>FlappyFlyAssets/frame-1 10.png</string>
-										<string>Use regular file</string>
-									</array>
-								</dict>
-								<dict>
-									<key>easing</key>
-									<dict>
-										<key>type</key>
-										<integer>0</integer>
-									</dict>
-									<key>name</key>
-									<string>spriteFrame</string>
-									<key>time</key>
-									<real>0.30000001192092896</real>
-									<key>type</key>
-									<integer>7</integer>
-									<key>value</key>
-									<array>
-										<string>FlappyFlyAssets/frame-2 10.png</string>
+										<string>FlappyFlyAssets/frame-2 14.png</string>
 										<string>Use regular file</string>
 									</array>
 								</dict>
@@ -119,7 +101,7 @@
 				<key>customClass</key>
 				<string></string>
 				<key>displayName</key>
-				<string>frame 3</string>
+				<string>frame-1 14</string>
 				<key>memberVarAssignmentName</key>
 				<string></string>
 				<key>memberVarAssignmentType</key>
@@ -158,14 +140,14 @@
 						</array>
 						<array>
 							<real>0.0</real>
-							<real>140</real>
+							<real>184</real>
 						</array>
 						<array>
-							<real>152</real>
-							<real>140</real>
+							<real>184</real>
+							<real>184</real>
 						</array>
 						<array>
-							<real>152</real>
+							<real>184</real>
 							<real>0.0</real>
 						</array>
 					</array>
@@ -173,16 +155,16 @@
 					<array>
 						<array>
 							<array>
-								<real>152</real>
+								<real>184</real>
 								<real>0.0</real>
 							</array>
 							<array>
-								<real>152</real>
-								<real>140</real>
+								<real>184</real>
+								<real>184</real>
 							</array>
 							<array>
 								<real>0.0</real>
-								<real>140</real>
+								<real>184</real>
 							</array>
 							<array>
 								<real>0.0</real>
@@ -209,7 +191,7 @@
 						<key>value</key>
 						<array>
 							<real>13.699999809265137</real>
-							<real>10.100000381469727</real>
+							<real>11</real>
 							<integer>0</integer>
 							<integer>0</integer>
 							<integer>0</integer>
@@ -222,8 +204,8 @@
 						<string>Point</string>
 						<key>value</key>
 						<array>
-							<real>0.5</real>
-							<real>0.5</real>
+							<real>0.51131540536880493</real>
+							<real>0.36510699987411499</real>
 						</array>
 					</dict>
 					<dict>
@@ -233,8 +215,8 @@
 						<string>ScaleLock</string>
 						<key>value</key>
 						<array>
-							<real>0.63060450553894043</real>
-							<real>0.66137272119522095</real>
+							<real>0.63558244705200195</real>
+							<real>0.55050075054168701</real>
 							<false/>
 							<integer>0</integer>
 						</array>
@@ -242,7 +224,7 @@
 					<dict>
 						<key>baseValue</key>
 						<array>
-							<string>FlappyFlyAssets/frame 3.png</string>
+							<string>FlappyFlyAssets/frame-1 14.png</string>
 							<string>Use regular file</string>
 						</array>
 						<key>name</key>
@@ -252,7 +234,7 @@
 						<key>value</key>
 						<array>
 							<string></string>
-							<string>FlappyFlyAssets/frame 3.png</string>
+							<string>FlappyFlyAssets/frame-1 14.png</string>
 						</array>
 					</dict>
 					<dict>
@@ -288,8 +270,6 @@
 						<array/>
 					</dict>
 				</array>
-				<key>selected</key>
-				<true/>
 				<key>seqExpanded</key>
 				<true/>
 			</dict>
@@ -413,13 +393,13 @@
 			<key>chainedSequenceId</key>
 			<integer>0</integer>
 			<key>length</key>
-			<real>0.3333333432674408</real>
+			<real>0.23333333432674408</real>
 			<key>name</key>
 			<string>Default Timeline</string>
 			<key>offset</key>
 			<real>0.0</real>
 			<key>position</key>
-			<real>0.10000000149011612</real>
+			<real>0.1666666716337204</real>
 			<key>resolution</key>
 			<real>30</real>
 			<key>scale</key>

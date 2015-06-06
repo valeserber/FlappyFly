@@ -100,9 +100,15 @@ static const CGFloat scrollSpeed = 80.f;
 - (BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair *)pair heroCollision:(CCNode *)hero obstacleCollision:(CCNode *)obstacle {
     _healthCount--;
     if (_healthCount == 0) {
+        [self loseGame];
         return NO;
     }
     ((CCSprite*)[_healthSprites objectAtIndex:_healthCount]).visible = NO;
     return YES;
 }
+
+-(void) loseGame {
+    _restartButton.visible = YES;
+}
+
 @end
