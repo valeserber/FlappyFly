@@ -22,6 +22,7 @@ static const CGFloat scrollSpeed = 80.f;
     NSMutableArray *_healthSprites;
     NSTimeInterval _sinceTouch;
     NSTimeInterval _sinceLastObstacle;
+    NSTimeInterval _checkOffScreenTime;
     int _healthCount;
     int i;
     
@@ -49,6 +50,7 @@ static const CGFloat scrollSpeed = 80.f;
     _hero.physicsBody.velocity = ccp(0, yVelocity);
     _sinceTouch += delta;
     _sinceLastObstacle += delta;
+    _checkOffScreenTime += delta;
     _hero.rotation = clampf(_hero.rotation, -10.f, 50.f);
     if (_hero.physicsBody.allowsRotation) {
         float angularVelocity = clampf(_hero.physicsBody.angularVelocity, -2.f, 1.f);
@@ -57,9 +59,13 @@ static const CGFloat scrollSpeed = 80.f;
     if ((_sinceTouch > 0.5f)) {
         [_hero.physicsBody applyAngularImpulse:-200.f*delta];
     }
-    if(_sinceLastObstacle >= 2.f){
+    if (_sinceLastObstacle >= 2.f) {
         _sinceLastObstacle = 0.f;
         [self spawnNewObstacle: 210 *i++];
+    }
+    if (_checkOffScreenTime >= 1.0f) {
+        _checkOffScreenTime = 0.f;
+        [self checkOffScreen];
     }
 }
 
@@ -79,6 +85,7 @@ static const CGFloat scrollSpeed = 80.f;
     _physicsNode.collisionDelegate = self;
     _obstacles = [NSMutableArray array];
     _sinceLastObstacle = 0.f;
+    _checkOffScreenTime = 0.f;
     i=1;
     _healthCount = 5;
     _healthSprites = [NSMutableArray array];
@@ -98,17 +105,30 @@ static const CGFloat scrollSpeed = 80.f;
 }
 
 - (BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair *)pair heroCollision:(CCNode *)hero obstacleCollision:(CCNode *)obstacle {
-    _healthCount--;
-    if (_healthCount == 0) {
-        [self loseGame];
-        return NO;
+    if (_healthCount != 1) {
+        _healthCount--;
+        [self loseLife:_healthCount];
+        return YES;
     }
-    ((CCSprite*)[_healthSprites objectAtIndex:_healthCount]).visible = NO;
-    return YES;
+    [self loseLife:0];
+    [self loseGame];
+    return NO;
+}
+
+-(void) loseLife: (int)num {
+    ((CCSprite*)[_healthSprites objectAtIndex:num]).visible = NO;
 }
 
 -(void) loseGame {
     _restartButton.visible = YES;
+}
+
+-(void) checkOffScreen {
+    CGPoint obstacleWorldPosition = [_physicsNode convertToWorldSpace:_hero.position];
+    CGPoint obstacleScreenPosition = [self convertToNodeSpace:obstacleWorldPosition];
+    if (obstacleScreenPosition.x < -_hero.contentSize.width) {
+        [self loseGame];
+    }
 }
 
 @end
