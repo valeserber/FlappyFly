@@ -2,7 +2,10 @@
 #define FlappyFly_MainScene_h
 
 #import "CCNode.h"
-@interface MainScene : CCNode <CCPhysicsCollisionDelegate>
+@interface MainScene : CCNode
+
++ (MainScene *)scene;
+- (id)init;
 
 @end
 #endif
