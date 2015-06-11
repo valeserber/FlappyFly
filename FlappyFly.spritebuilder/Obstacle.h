@@ -13,7 +13,13 @@
 @interface Obstacle : CCNode
 
 + (NSInteger)randomNumberBetween:(NSInteger)min maxNumber:(NSInteger)max;
++ (Obstacle*)getRandomObstacle;
 
 @end
 
+@interface Blacky : Obstacle
+
++ (Blacky *)createBlacky;
+
+@end
 #endif

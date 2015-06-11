@@ -8,33 +8,46 @@
 
 #import <Foundation/Foundation.h>
 #import "Obstacle.h"
+typedef enum obstacles {
+    BLACKY,
+    SPIKY,
+    ROOFSTICK,
+    CARNIVOROUS,
+    STATUE
+}obstacles;
 
 @implementation Obstacle {
 
 }
 
-+ (NSString *)obstacleName
-{
-    static NSArray *_names;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        _names = @[@"Carnivorous",
-                   @"Blacky",
-                   @"Spiky"];
-    });
-    NSInteger r = [self randomNumberBetween:0 maxNumber: [_names count]];
-    return _names[r];
-}
-
--(id) init {
-    NSString *name = [[self class] obstacleName];
-    self = (Obstacle *)[CCBReader load: name];
+-(id) initWithObstacleName: (NSString *)obstacleName {
+    self = (Obstacle *) [CCBReader load:obstacleName];
     return self;
 }
 
--(void) didLoadFromCCB {
-
-
++ (Obstacle *) getRandomObstacle {
+    NSString *obstacleName;
+    long r = arc4random_uniform(5);
+    switch (r) {
+        case BLACKY:
+            return [[Blacky alloc] initWithObstacleName:@"Blacky"];
+            break;
+        case SPIKY:
+            obstacleName = @"Spiky";
+            break;
+        case CARNIVOROUS:
+            obstacleName = @"Carnivorous";
+            break;
+        case ROOFSTICK:
+            obstacleName = @"RoofStick";
+            break;
+        case STATUE:
+            obstacleName = @"Statue";
+            break;
+        default:
+            break;
+    }
+    return [[self alloc] initWithObstacleName:obstacleName];
 }
 
 + (NSInteger)randomNumberBetween:(NSInteger)min maxNumber:(NSInteger)max
@@ -43,5 +56,27 @@
     return r;
 }
 
+@end
+
+@implementation Blacky {
+    NSTimeInterval _movementInterval;
+}
+
+-(id) initWithObstacleName: (NSString *)obstacleName {
+    self = [super initWithObstacleName:obstacleName];
+    return self;
+}
+
+-(void) didLoadFromCCB {
+    _movementInterval = 0.f;
+}
+
+- (void)scheduleUpdate {
+}
+
+- (void)update:(CCTime)delta {
+    [self.physicsBody applyImpulse:ccp(0, 100.f)];
+    [self.physicsBody applyAngularImpulse:300.f];
+}
 
 @end

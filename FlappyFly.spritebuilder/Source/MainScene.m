@@ -6,26 +6,21 @@ static const CGFloat scrollSpeed = 80.f;
 @implementation MainScene {
     CCNode *_hero;
     CCPhysicsNode *_physicsNode;
-    CCNode *_ground1;
-    CCNode *_ground2;
-    CCNode *_ground3;
-    CCNode *_ground4;
+    CCNode *_ground1, *_ground2, *_ground3, *_ground4;
     CCButton *_restartButton;
-    CCNode *_health1;
-    CCNode *_health2;
-    CCNode *_health3;
-    CCNode *_health4;
-    CCNode *_health5;;
+    CCNode *_health1, *_health2, *_health3, *_health4, *_health5;
     NSArray *_grounds;
     BOOL _impulse;
-    NSMutableArray *_obstacles;
-    NSMutableArray *_healthSprites;
-    NSTimeInterval _sinceTouch;
-    NSTimeInterval _sinceLastObstacle;
-    NSTimeInterval _checkOffScreenTime;
-    int _healthCount;
-    int i;
+    NSMutableArray *_obstacles, *_healthSprites;
+    NSTimeInterval _sinceTouch, _sinceLastObstacle, _checkOffScreenTime;
+    int _healthCount, i;
     
+}
+
++ (NSInteger)randomNumberBetween:(NSInteger)min maxNumber:(NSInteger)max
+{
+    NSInteger r= min + arc4random_uniform((unsigned int)max);
+    return r;
 }
 
 - (void)update:(CCTime)delta {
@@ -70,13 +65,14 @@ static const CGFloat scrollSpeed = 80.f;
 }
 
 - (void)spawnNewObstacle: (int) x {
-    Obstacle *_obstacle = [[Obstacle alloc]init];
+    Obstacle* _obstacle = [Obstacle getRandomObstacle];
     CGSize winSize = [CCDirector sharedDirector].viewSize;
-    NSInteger r = [Obstacle randomNumberBetween: 0 maxNumber: 140];
+    NSInteger r = [MainScene randomNumberBetween: 0 maxNumber: 140];
     CGPoint point = ccp(winSize.width + x + r, 75);
     _obstacle.position = point;
     [_obstacles addObject:_obstacle];
     [_physicsNode addChild:_obstacle];
+    
 }
 
 - (void)didLoadFromCCB {
@@ -131,5 +127,8 @@ static const CGFloat scrollSpeed = 80.f;
         [self loseGame];
     }
 }
+
+
+
 
 @end

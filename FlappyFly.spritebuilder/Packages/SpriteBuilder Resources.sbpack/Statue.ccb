@@ -49,7 +49,7 @@
 				<key>customClass</key>
 				<string></string>
 				<key>displayName</key>
-				<string>spike 2</string>
+				<string>statue</string>
 				<key>memberVarAssignmentName</key>
 				<string></string>
 				<key>memberVarAssignmentType</key>
@@ -83,74 +83,48 @@
 					<key>points</key>
 					<array>
 						<array>
-							<real>0.0</real>
-							<real>0.0</real>
+							<real>9.10943603515625</real>
+							<real>6.1406288146972656</real>
 						</array>
 						<array>
-							<real>-0.50388503074645996</real>
-							<real>215.38674926757812</real>
+							<real>11.19146728515625</real>
+							<real>135.74609375</real>
 						</array>
 						<array>
-							<real>23.308965682983398</real>
-							<real>245.99134826660156</real>
+							<real>54.40240478515625</real>
+							<real>141.44140625</real>
 						</array>
 						<array>
-							<real>43.246116638183594</real>
-							<real>217.09378051757812</real>
+							<real>97.30865478515625</real>
+							<real>137.30078125</real>
 						</array>
 						<array>
-							<real>63.72552490234375</real>
-							<real>247.81562805175781</real>
-						</array>
-						<array>
-							<real>91.785873413085938</real>
-							<real>215.50994873046875</real>
-						</array>
-						<array>
-							<real>92</real>
-							<real>0.0</real>
+							<real>99.21099853515625</real>
+							<real>5.3906135559082031</real>
 						</array>
 					</array>
 					<key>polygons</key>
 					<array>
 						<array>
 							<array>
-								<real>43.246116638183594</real>
-								<real>217.09378051757812</real>
+								<real>99.21099853515625</real>
+								<real>5.3906135559082031</real>
 							</array>
 							<array>
-								<real>23.308965682983398</real>
-								<real>245.99134826660156</real>
+								<real>97.30865478515625</real>
+								<real>137.30078125</real>
 							</array>
 							<array>
-								<real>-0.50388503074645996</real>
-								<real>215.38674926757812</real>
+								<real>54.40240478515625</real>
+								<real>141.44140625</real>
 							</array>
 							<array>
-								<real>0.0</real>
-								<real>0.0</real>
-							</array>
-						</array>
-						<array>
-							<array>
-								<real>0.0</real>
-								<real>0.0</real>
+								<real>11.19146728515625</real>
+								<real>135.74609375</real>
 							</array>
 							<array>
-								<real>92</real>
-								<real>0.0</real>
-							</array>
-							<array>
-								<real>91.785873413085938</real>
-								<real>215.50994873046875</real>
-							</array>
-							<array>
-								<real>63.72552490234375</real>
-								<real>247.81562805175781</real>
-							</array>
-							<array>
-								<real>43.246116638183594</real>
-								<real>217.09378051757812</real>
+								<real>9.10943603515625</real>
+								<real>6.1406288146972656</real>
 							</array>
 						</array>
 					</array>
@@ -172,8 +146,8 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>-40</real>
-							<real>179.99998474121094</real>
+							<real>0.0</real>
+							<real>35</real>
 							<integer>0</integer>
 							<integer>0</integer>
 							<integer>0</integer>
@@ -186,8 +160,8 @@
 						<string>Point</string>
 						<key>value</key>
 						<array>
-							<real>0.50938314199447632</real>
-							<real>0.52963042259216309</real>
+							<real>0.51320713758468628</real>
+							<real>0.47571215033531189</real>
 						</array>
 					</dict>
 					<dict>
@@ -197,19 +171,11 @@
 						<string>ScaleLock</string>
 						<key>value</key>
 						<array>
-							<real>0.45761555433273315</real>
-							<real>0.4977240264415741</real>
+							<real>1.3824536800384521</real>
+							<real>1.2054569721221924</real>
 							<false/>
 							<integer>0</integer>
 						</array>
-					</dict>
-					<dict>
-						<key>name</key>
-						<string>rotation</string>
-						<key>type</key>
-						<string>Degrees</string>
-						<key>value</key>
-						<real>180</real>
 					</dict>
 					<dict>
 						<key>name</key>
@@ -219,7 +185,7 @@
 						<key>value</key>
 						<array>
 							<string></string>
-							<string>FlappyFlyAssets/spike 2.png</string>
+							<string>FlappyFlyAssets/statue.png</string>
 						</array>
 					</dict>
 					<dict>
