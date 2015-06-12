@@ -10,7 +10,7 @@
 		<false/>
 	</dict>
 	<key>UUID</key>
-	<integer>2</integer>
+	<integer>3</integer>
 	<key>centeredOrigin</key>
 	<false/>
 	<key>currentResolution</key>
@@ -41,7 +41,7 @@
 		<array>
 			<dict>
 				<key>UUID</key>
-				<integer>1</integer>
+				<integer>2</integer>
 				<key>baseClass</key>
 				<string>CCSprite</string>
 				<key>children</key>
@@ -49,7 +49,7 @@
 				<key>customClass</key>
 				<string></string>
 				<key>displayName</key>
-				<string>spike 2</string>
+				<string>spike D</string>
 				<key>memberVarAssignmentName</key>
 				<string></string>
 				<key>memberVarAssignmentType</key>
@@ -65,11 +65,9 @@
 					<key>collisionCategories</key>
 					<array/>
 					<key>collisionMask</key>
-					<array>
-						<string>coll</string>
-					</array>
+					<array/>
 					<key>collisionType</key>
-					<string>obstacleCollision</string>
+					<string></string>
 					<key>cornerRadius</key>
 					<real>0.0</real>
 					<key>density</key>
@@ -87,27 +85,19 @@
 							<real>0.0</real>
 						</array>
 						<array>
-							<real>-0.50388503074645996</real>
-							<real>215.38674926757812</real>
+							<real>-2.8415637016296387</real>
+							<real>111.6591796875</real>
 						</array>
 						<array>
-							<real>23.308965682983398</real>
-							<real>245.99134826660156</real>
+							<real>37.626396179199219</real>
+							<real>159.48725891113281</real>
 						</array>
 						<array>
-							<real>43.246116638183594</real>
-							<real>217.09378051757812</real>
+							<real>81.902412414550781</real>
+							<real>110.47210693359375</real>
 						</array>
 						<array>
-							<real>63.72552490234375</real>
-							<real>247.81562805175781</real>
-						</array>
-						<array>
-							<real>91.785873413085938</real>
-							<real>215.50994873046875</real>
-						</array>
-						<array>
-							<real>92</real>
+							<real>79</real>
 							<real>0.0</real>
 						</array>
 					</array>
@@ -115,42 +105,24 @@
 					<array>
 						<array>
 							<array>
-								<real>43.246116638183594</real>
-								<real>217.09378051757812</real>
+								<real>79</real>
+								<real>0.0</real>
 							</array>
 							<array>
-								<real>23.308965682983398</real>
-								<real>245.99134826660156</real>
+								<real>81.902412414550781</real>
+								<real>110.47210693359375</real>
 							</array>
 							<array>
-								<real>-0.50388503074645996</real>
-								<real>215.38674926757812</real>
+								<real>37.626396179199219</real>
+								<real>159.48725891113281</real>
+							</array>
+							<array>
+								<real>-2.8415637016296387</real>
+								<real>111.6591796875</real>
 							</array>
 							<array>
 								<real>0.0</real>
 								<real>0.0</real>
-							</array>
-						</array>
-						<array>
-							<array>
-								<real>0.0</real>
-								<real>0.0</real>
-							</array>
-							<array>
-								<real>92</real>
-								<real>0.0</real>
-							</array>
-							<array>
-								<real>91.785873413085938</real>
-								<real>215.50994873046875</real>
-							</array>
-							<array>
-								<real>63.72552490234375</real>
-								<real>247.81562805175781</real>
-							</array>
-							<array>
-								<real>43.246116638183594</real>
-								<real>217.09378051757812</real>
 							</array>
 						</array>
 					</array>
@@ -172,8 +144,8 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>-40</real>
-							<real>179.99998474121094</real>
+							<real>-6.0000009536743164</real>
+							<real>130.99998474121094</real>
 							<integer>0</integer>
 							<integer>0</integer>
 							<integer>0</integer>
@@ -186,8 +158,8 @@
 						<string>Point</string>
 						<key>value</key>
 						<array>
-							<real>0.50938314199447632</real>
-							<real>0.52963042259216309</real>
+							<real>0.5</real>
+							<real>0.5</real>
 						</array>
 					</dict>
 					<dict>
@@ -197,8 +169,8 @@
 						<string>ScaleLock</string>
 						<key>value</key>
 						<array>
-							<real>0.45761555433273315</real>
-							<real>0.4977240264415741</real>
+							<real>0.40645065903663635</real>
+							<real>1.2343815565109253</real>
 							<false/>
 							<integer>0</integer>
 						</array>
@@ -219,7 +191,7 @@
 						<key>value</key>
 						<array>
 							<string></string>
-							<string>FlappyFlyAssets/spike 2.png</string>
+							<string>FlappyFlyAssets/spike D.png</string>
 						</array>
 					</dict>
 					<dict>

@@ -19,7 +19,5 @@
 
 @interface Blacky : Obstacle
 
-+ (Blacky *)createBlacky;
-
 @end
 #endif
