@@ -27,10 +27,10 @@ typedef enum obstacles {
 
 + (Obstacle *) getRandomObstacle {
     NSString *obstacleName;
-    long r = arc4random_uniform(5);
+    long r = arc4random_uniform(1);
     switch (r) {
         case BLACKY:
-            return [[Blacky alloc] initWithObstacleName:@"Blacky"];
+            return (Obstacle*)[CCBReader load:@"Blacky"];//[[Blacky alloc] initWithObstacleName:@"Blacky"];
             break;
         case SPIKY:
             obstacleName = @"Spiky";
@@ -55,6 +55,10 @@ typedef enum obstacles {
     NSInteger r= min + arc4random_uniform((unsigned int)max);
     return r;
 }
+- (void) update:(CCTime)delta
+{
+    NSLog(@"update obstacle");
+}
 
 @end
 
@@ -75,6 +79,7 @@ typedef enum obstacles {
 }
 
 - (void)update:(CCTime)delta {
+    NSLog(@"update blacky");
     [self.physicsBody applyImpulse:ccp(0, 100.f)];
     [self.physicsBody applyAngularImpulse:300.f];
 }
