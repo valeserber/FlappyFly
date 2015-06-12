@@ -11,7 +11,7 @@
 
 #import "CCNode.h"
 
-@interface FirstScene : CCScene <CCPhysicsCollisionDelegate>
+@interface FirstScene : CCNode <CCPhysicsCollisionDelegate>//CCScene <CCPhysicsCollisionDelegate>
 + (FirstScene *)scene;
 @end
 

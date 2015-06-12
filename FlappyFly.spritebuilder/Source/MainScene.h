@@ -1,10 +1,10 @@
 #ifndef FlappyFly_MainScene_h
 #define FlappyFly_MainScene_h
 
-#import "CCNode.h"
-@interface MainScene : CCNode
+#import "cocos2d.h"
+@interface MainScene : CCScene
 
-+ (MainScene *)scene;
+//+ (MainScene *)scene;
 - (id)init;
 
 @end

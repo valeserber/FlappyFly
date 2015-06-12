@@ -37,10 +37,16 @@ static const CGFloat scrollSpeed = 80.f;
     
 }
 
-+ (FirstScene *)scene
-{
-    return [[self alloc] init];
++ (FirstScene *)scene {
+    
+    
+    CCScene* scene = [[CCScene alloc] init];
+    [scene addChild:[CCBReader load: @"FirstScene"]];
+    return (FirstScene*)scene;
+
+//    return [[self alloc] init];
 }
+
 
 - (void)update:(CCTime)delta {
     if(_impulse==true){
