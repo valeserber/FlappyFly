@@ -9,11 +9,16 @@
 #ifndef FlappyFly_Obstacle_h
 #define FlappyFly_Obstacle_h
 #import "CCNode.h"
+#import "cocos2d.h"
 
 @interface Obstacle : CCNode
 
 + (NSInteger)randomNumberBetween:(NSInteger)min maxNumber:(NSInteger)max;
 + (Obstacle*)getRandomObstacle;
+
+@end
+
+@interface Statue : Obstacle
 
 @end
 

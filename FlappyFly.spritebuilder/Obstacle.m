@@ -17,7 +17,6 @@ typedef enum obstacles {
 }obstacles;
 
 @implementation Obstacle {
-
 }
 
 -(id) initWithObstacleName: (NSString *)obstacleName {
@@ -27,7 +26,7 @@ typedef enum obstacles {
 
 + (Obstacle *) getRandomObstacle {
     NSString *obstacleName;
-    long r = arc4random_uniform(1);
+    long r = arc4random_uniform(5);
     switch (r) {
         case BLACKY:
             return (Obstacle*)[CCBReader load:@"Blacky"];//[[Blacky alloc] initWithObstacleName:@"Blacky"];
@@ -61,6 +60,33 @@ typedef enum obstacles {
 }
 
 @end
+@implementation Statue {
+    NSTimeInterval _movementInterval;
+}
+
+-(id) initWithObstacleName: (NSString *)obstacleName {
+    self = [super initWithObstacleName:obstacleName];
+    return self;
+}
+
+-(void) didLoadFromCCB {
+    _movementInterval = 0.f;
+}
+
+- (void)scheduleUpdate {
+}
+
+- (void)update:(CCTime)delta {
+    if ((_movementInterval > 2.0f)) {
+        _movementInterval = 0.f;
+        [self.physicsBody applyImpulse:ccp(0, 800.f)];
+        [self.physicsBody applyAngularImpulse:900.f];
+    }
+    _movementInterval+=delta;
+    //    [self runAction:[CCJumpBy actionWithDuration:1 position: ccp(0, 0) height:50 jumps:1]];
+}
+
+@end
 
 @implementation Blacky {
     NSTimeInterval _movementInterval;
@@ -80,8 +106,14 @@ typedef enum obstacles {
 
 - (void)update:(CCTime)delta {
     NSLog(@"update blacky");
-    [self.physicsBody applyImpulse:ccp(0, 100.f)];
-    [self.physicsBody applyAngularImpulse:300.f];
+    if ((_movementInterval > 2.0f)) {
+        _movementInterval = 0.f;
+        [self.physicsBody applyImpulse:ccp(0, 1600.f)];
+        
+//        [self.physicsBody applyAngularImpulse:900.f];
+    }
+    _movementInterval+=delta;
+//    [self runAction:[CCJumpBy actionWithDuration:1 position: ccp(0, 0) height:50 jumps:1]];
 }
 
 @end

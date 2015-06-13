@@ -33,6 +33,11 @@ static const CGFloat scrollSpeed = 80.f;
     _hero.position = ccp(_hero.position.x + delta * scrollSpeed, _hero.position.y);
     _physicsNode.position = ccp(_physicsNode.position.x - (scrollSpeed *delta), _physicsNode.position.y);
     
+    
+    //BORRAR
+    _physicsNode.debugDraw = YES;
+    
+    
     for (CCNode *ground in _grounds) {
         CGPoint groundWorldPosition = [_physicsNode convertToWorldSpace:ground.position];
         CGPoint groundScreenPosition = [self convertToNodeSpace:groundWorldPosition];
