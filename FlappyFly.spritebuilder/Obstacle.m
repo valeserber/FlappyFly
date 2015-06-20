@@ -17,7 +17,8 @@ typedef enum obstacles {
     CARNIVOROUS,
     STATUE,
     ROOFSTICK2,
-    ROOFSTICK3
+    ROOFSTICK3,
+    GRAVITYBALL
 }obstacles;
 
 @implementation Obstacle {
@@ -31,7 +32,7 @@ typedef enum obstacles {
 
 + (Obstacle *) getRandomObstacle {
     NSString *obstacleName;
-    long r = arc4random_uniform(7);
+    long r = arc4random_uniform(8);
     switch (r) {
         case BLACKY:
             return (Obstacle*)[CCBReader load:@"Blacky"];
@@ -53,6 +54,9 @@ typedef enum obstacles {
             break;
         case ROOFSTICK3:
             obstacleName = @"RoofStick3";
+            break;
+        case GRAVITYBALL:
+            obstacleName = @"gravityBall";
             break;
         default:
             break;
@@ -120,11 +124,14 @@ typedef enum obstacles {
 - (void)update:(CCTime)delta {
     if ((_movementInterval > 2.0f)) {
         _movementInterval = 0.f;
-        [self.physicsBody applyImpulse:ccp(0, 800.f)];
+        [self.physicsBody applyImpulse:ccp(0, 1200.f)];
     }
     _movementInterval+=delta;
 }
 
 @end
 
+@implementation GravityBall
+
+@end
 

@@ -26,4 +26,8 @@
 
 @end
 
+@interface GravityBall : Obstacle
+
+@end
+
 #endif

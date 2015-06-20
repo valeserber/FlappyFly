@@ -20,17 +20,22 @@
 
 
 - (void)update:(CCTime)delta {
-    if(_throwMiniRoofStick > 5.0f) {
-        CCNode *_miniRoofStick = [CCBReader load:@"RoofStickProjectile"];
-        CGPoint point = self.position;
-        _miniRoofStick.position = point;
+    if(_throwMiniRoofStick > 4.0f) {
+        [self spawnMiniRoofStick:-7];
+        [self spawnMiniRoofStick:7];
         _throwMiniRoofStick = 0;
-        [self.physicsNode addChild:_miniRoofStick];
     }
     _throwMiniRoofStick +=delta;
 }
 
 -(NSInteger)getVerticalPosition {
     return 270;
+}
+
+-(void)spawnMiniRoofStick:(NSInteger) r {
+    CCNode *_miniRoofStick = [CCBReader load:@"RoofStickProjectile"];
+    CGPoint point = self.position;
+    _miniRoofStick.position = ccp(point.x+r,point.y);
+    [self.physicsNode addChild:_miniRoofStick];
 }
 @end
