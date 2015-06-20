@@ -35,7 +35,7 @@ static const CGFloat scrollSpeed = 80.f;
     
     
     //BORRAR
-    _physicsNode.debugDraw = YES;
+    //_physicsNode.debugDraw = YES;
     
     
     for (CCNode *ground in _grounds) {
@@ -73,7 +73,7 @@ static const CGFloat scrollSpeed = 80.f;
     Obstacle* _obstacle = [Obstacle getRandomObstacle];
     CGSize winSize = [CCDirector sharedDirector].viewSize;
     NSInteger r = [MainScene randomNumberBetween: 0 maxNumber: 140];
-    CGPoint point = ccp(winSize.width + x + r, 75);
+    CGPoint point = ccp(winSize.width + x + r, [_obstacle getVerticalPosition]);
     _obstacle.position = point;
     [_obstacles addObject:_obstacle];
     [_physicsNode addChild:_obstacle];
@@ -106,15 +106,25 @@ static const CGFloat scrollSpeed = 80.f;
     _impulse=false;
 }
 
-- (BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair *)pair heroCollision:(CCNode *)hero obstacleCollision:(CCNode *)obstacle {
+-(BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair *)pair heroCollision:(CCNode *)hero obstacleCollision:(CCNode *)obstacle {
     if (_healthCount != 1) {
         _healthCount--;
         [self loseLife:_healthCount];
         return YES;
     }
+    CCParticleSystem *explosion = (CCParticleSystem *)[CCBReader load:@"heroCrush"];
+    explosion.autoRemoveOnFinish = TRUE;
+    explosion.position = hero.position;
+    [_physicsNode addChild:explosion];
+    
     [self loseLife:0];
     [self loseGame];
     return NO;
+}
+
+-(BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair *)pair groundCollision:(CCNode *)ground projectileCollision:(CCNode *)projectile {
+    [projectile removeFromParent];
+    return TRUE;
 }
 
 -(void) loseLife: (int)num {

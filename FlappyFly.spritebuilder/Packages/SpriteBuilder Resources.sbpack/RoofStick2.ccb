@@ -10,7 +10,7 @@
 		<false/>
 	</dict>
 	<key>UUID</key>
-	<integer>3</integer>
+	<integer>2</integer>
 	<key>centeredOrigin</key>
 	<false/>
 	<key>currentResolution</key>
@@ -41,7 +41,7 @@
 		<array>
 			<dict>
 				<key>UUID</key>
-				<integer>2</integer>
+				<integer>1</integer>
 				<key>baseClass</key>
 				<string>CCSprite</string>
 				<key>children</key>
@@ -49,86 +49,11 @@
 				<key>customClass</key>
 				<string></string>
 				<key>displayName</key>
-				<string>spike D</string>
+				<string>spike A</string>
 				<key>memberVarAssignmentName</key>
 				<string></string>
 				<key>memberVarAssignmentType</key>
 				<integer>1</integer>
-				<key>physicsBody</key>
-				<dict>
-					<key>affectedByGravity</key>
-					<true/>
-					<key>allowsRotation</key>
-					<true/>
-					<key>bodyShape</key>
-					<integer>0</integer>
-					<key>collisionCategories</key>
-					<array/>
-					<key>collisionMask</key>
-					<array>
-						<string>coll</string>
-					</array>
-					<key>collisionType</key>
-					<string>obstacleCollision</string>
-					<key>cornerRadius</key>
-					<real>0.0</real>
-					<key>density</key>
-					<real>1</real>
-					<key>dynamic</key>
-					<false/>
-					<key>elasticity</key>
-					<real>0.30000001192092896</real>
-					<key>friction</key>
-					<real>0.30000001192092896</real>
-					<key>points</key>
-					<array>
-						<array>
-							<real>0.0</real>
-							<real>0.0</real>
-						</array>
-						<array>
-							<real>-2.8415637016296387</real>
-							<real>111.6591796875</real>
-						</array>
-						<array>
-							<real>37.626396179199219</real>
-							<real>159.48725891113281</real>
-						</array>
-						<array>
-							<real>81.902412414550781</real>
-							<real>110.47210693359375</real>
-						</array>
-						<array>
-							<real>79</real>
-							<real>0.0</real>
-						</array>
-					</array>
-					<key>polygons</key>
-					<array>
-						<array>
-							<array>
-								<real>79</real>
-								<real>0.0</real>
-							</array>
-							<array>
-								<real>81.902412414550781</real>
-								<real>110.47210693359375</real>
-							</array>
-							<array>
-								<real>37.626396179199219</real>
-								<real>159.48725891113281</real>
-							</array>
-							<array>
-								<real>-2.8415637016296387</real>
-								<real>111.6591796875</real>
-							</array>
-							<array>
-								<real>0.0</real>
-								<real>0.0</real>
-							</array>
-						</array>
-					</array>
-				</dict>
 				<key>properties</key>
 				<array>
 					<dict>
@@ -147,7 +72,7 @@
 						<key>value</key>
 						<array>
 							<real>0.0</real>
-							<real>202.99998474121094</real>
+							<real>8</real>
 							<integer>0</integer>
 							<integer>0</integer>
 							<integer>0</integer>
@@ -171,19 +96,11 @@
 						<string>ScaleLock</string>
 						<key>value</key>
 						<array>
-							<real>0.40645065903663635</real>
-							<real>1.2343815565109253</real>
+							<real>1</real>
+							<real>1</real>
 							<false/>
 							<integer>0</integer>
 						</array>
-					</dict>
-					<dict>
-						<key>name</key>
-						<string>rotation</string>
-						<key>type</key>
-						<string>Degrees</string>
-						<key>value</key>
-						<real>180</real>
 					</dict>
 					<dict>
 						<key>name</key>
@@ -193,7 +110,7 @@
 						<key>value</key>
 						<array>
 							<string></string>
-							<string>FlappyFlyAssets/spike D.png</string>
+							<string>FlappyFlyAssets/spike A.png</string>
 						</array>
 					</dict>
 					<dict>
@@ -222,6 +139,17 @@
 					</dict>
 					<dict>
 						<key>name</key>
+						<string>flip</string>
+						<key>type</key>
+						<string>Flip</string>
+						<key>value</key>
+						<array>
+							<false/>
+							<true/>
+						</array>
+					</dict>
+					<dict>
+						<key>name</key>
 						<string>effects</string>
 						<key>type</key>
 						<string>EffectControl</string>
@@ -229,18 +157,83 @@
 						<array/>
 					</dict>
 				</array>
-				<key>selected</key>
-				<true/>
 			</dict>
 		</array>
 		<key>customClass</key>
-		<string>Obstacle</string>
+		<string>RoofStick</string>
 		<key>displayName</key>
 		<string>CCNode</string>
 		<key>memberVarAssignmentName</key>
 		<string></string>
 		<key>memberVarAssignmentType</key>
 		<integer>1</integer>
+		<key>physicsBody</key>
+		<dict>
+			<key>affectedByGravity</key>
+			<true/>
+			<key>allowsRotation</key>
+			<true/>
+			<key>bodyShape</key>
+			<integer>0</integer>
+			<key>collisionCategories</key>
+			<array/>
+			<key>collisionMask</key>
+			<array>
+				<string>coll</string>
+			</array>
+			<key>collisionType</key>
+			<string>obstacleCollision</string>
+			<key>cornerRadius</key>
+			<real>0.0</real>
+			<key>density</key>
+			<real>1</real>
+			<key>dynamic</key>
+			<false/>
+			<key>elasticity</key>
+			<real>0.30000001192092896</real>
+			<key>friction</key>
+			<real>0.30000001192092896</real>
+			<key>points</key>
+			<array>
+				<array>
+					<real>-46.29296875</real>
+					<real>-52.421867370605469</real>
+				</array>
+				<array>
+					<real>-68.16796875</real>
+					<real>74.445327758789062</real>
+				</array>
+				<array>
+					<real>68.94921875</real>
+					<real>72.625015258789062</real>
+				</array>
+				<array>
+					<real>50.19921875</real>
+					<real>-51.80078125</real>
+				</array>
+			</array>
+			<key>polygons</key>
+			<array>
+				<array>
+					<array>
+						<real>50.19921875</real>
+						<real>-51.80078125</real>
+					</array>
+					<array>
+						<real>68.94921875</real>
+						<real>72.625015258789062</real>
+					</array>
+					<array>
+						<real>-68.16796875</real>
+						<real>74.445327758789062</real>
+					</array>
+					<array>
+						<real>-46.29296875</real>
+						<real>-52.421867370605469</real>
+					</array>
+				</array>
+			</array>
+		</dict>
 		<key>properties</key>
 		<array>
 			<dict>
@@ -303,6 +296,8 @@
 				</array>
 			</dict>
 		</array>
+		<key>selected</key>
+		<true/>
 	</dict>
 	<key>notes</key>
 	<array/>

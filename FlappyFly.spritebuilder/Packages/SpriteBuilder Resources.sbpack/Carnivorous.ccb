@@ -537,8 +537,8 @@
 						<string>ScaleLock</string>
 						<key>value</key>
 						<array>
-							<real>0.28701049089431763</real>
-							<real>0.30653601884841919</real>
+							<real>0.36573734879493713</real>
+							<real>0.39307054877281189</real>
 							<false/>
 							<integer>0</integer>
 						</array>
@@ -592,16 +592,14 @@
 						<array/>
 					</dict>
 				</array>
-				<key>selected</key>
-				<true/>
 				<key>seqExpanded</key>
 				<true/>
 			</dict>
 		</array>
 		<key>customClass</key>
-		<string></string>
+		<string>Obstacle</string>
 		<key>displayName</key>
-		<string>CCSprite</string>
+		<string>CCNode</string>
 		<key>memberVarAssignmentName</key>
 		<string></string>
 		<key>memberVarAssignmentType</key>
@@ -698,6 +696,8 @@
 				<array/>
 			</dict>
 		</array>
+		<key>selected</key>
+		<true/>
 	</dict>
 	<key>notes</key>
 	<array/>

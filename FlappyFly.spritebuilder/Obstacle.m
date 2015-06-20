@@ -8,15 +8,20 @@
 
 #import <Foundation/Foundation.h>
 #import "Obstacle.h"
+#import "RoofStick.h"
+
 typedef enum obstacles {
     BLACKY,
     SPIKY,
     ROOFSTICK,
     CARNIVOROUS,
-    STATUE
+    STATUE,
+    ROOFSTICK2,
+    ROOFSTICK3
 }obstacles;
 
 @implementation Obstacle {
+    
 }
 
 -(id) initWithObstacleName: (NSString *)obstacleName {
@@ -26,10 +31,10 @@ typedef enum obstacles {
 
 + (Obstacle *) getRandomObstacle {
     NSString *obstacleName;
-    long r = arc4random_uniform(5);
+    long r = arc4random_uniform(7);
     switch (r) {
         case BLACKY:
-            return (Obstacle*)[CCBReader load:@"Blacky"];//[[Blacky alloc] initWithObstacleName:@"Blacky"];
+            return (Obstacle*)[CCBReader load:@"Blacky"];
             break;
         case SPIKY:
             obstacleName = @"Spiky";
@@ -42,6 +47,12 @@ typedef enum obstacles {
             break;
         case STATUE:
             obstacleName = @"Statue";
+            break;
+        case ROOFSTICK2:
+            return (Obstacle*)[CCBReader load:@"RoofStick2"];
+            break;
+        case ROOFSTICK3:
+            obstacleName = @"RoofStick3";
             break;
         default:
             break;
@@ -56,7 +67,10 @@ typedef enum obstacles {
 }
 - (void) update:(CCTime)delta
 {
-    NSLog(@"update obstacle");
+}
+
+-(NSInteger)getVerticalPosition {
+    return 75;
 }
 
 @end
@@ -83,7 +97,6 @@ typedef enum obstacles {
         [self.physicsBody applyAngularImpulse:900.f];
     }
     _movementInterval+=delta;
-    //    [self runAction:[CCJumpBy actionWithDuration:1 position: ccp(0, 0) height:50 jumps:1]];
 }
 
 @end
@@ -105,15 +118,13 @@ typedef enum obstacles {
 }
 
 - (void)update:(CCTime)delta {
-    NSLog(@"update blacky");
     if ((_movementInterval > 2.0f)) {
         _movementInterval = 0.f;
-        [self.physicsBody applyImpulse:ccp(0, 1600.f)];
-        
-//        [self.physicsBody applyAngularImpulse:900.f];
+        [self.physicsBody applyImpulse:ccp(0, 800.f)];
     }
     _movementInterval+=delta;
-//    [self runAction:[CCJumpBy actionWithDuration:1 position: ccp(0, 0) height:50 jumps:1]];
 }
 
 @end
+
+

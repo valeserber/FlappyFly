@@ -1,4 +1,3 @@
-//
 //  Obstacle.h
 //  FlappyFly
 //
@@ -15,6 +14,7 @@
 
 + (NSInteger)randomNumberBetween:(NSInteger)min maxNumber:(NSInteger)max;
 + (Obstacle*)getRandomObstacle;
+- (NSInteger)getVerticalPosition;
 
 @end
 
@@ -25,4 +25,5 @@
 @interface Blacky : Obstacle
 
 @end
+
 #endif
