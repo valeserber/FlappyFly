@@ -35,7 +35,7 @@ typedef enum obstacles {
     long r = arc4random_uniform(8);
     switch (r) {
         case BLACKY:
-            return (Obstacle*)[CCBReader load:@"Blacky"];
+            obstacleName = @"Blacky";
             break;
         case SPIKY:
             obstacleName = @"Spiky";
@@ -50,7 +50,7 @@ typedef enum obstacles {
             obstacleName = @"Statue";
             break;
         case ROOFSTICK2:
-            return (Obstacle*)[CCBReader load:@"RoofStick2"];
+            obstacleName = @"RoofStick2";
             break;
         case ROOFSTICK3:
             obstacleName = @"RoofStick3";
@@ -133,5 +133,8 @@ typedef enum obstacles {
 
 @implementation GravityBall
 
+- (void)didLoadFromCCB {
+    
+}
 @end
 
