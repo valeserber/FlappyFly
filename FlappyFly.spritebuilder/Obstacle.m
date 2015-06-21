@@ -36,7 +36,6 @@ typedef enum obstacles {
     switch (r) {
         case BLACKY:
             obstacleName = @"Blacky";
-//            return (Obstacle*)[CCBReader load:@"Blacky"];
             break;
         case SPIKY:
             obstacleName = @"Spiky";
@@ -51,7 +50,7 @@ typedef enum obstacles {
             obstacleName = @"Statue";
             break;
         case ROOFSTICK2:
-            return (Obstacle*)[CCBReader load:@"RoofStick2"];
+            obstacleName = @"RoofStick2";
             break;
         case ROOFSTICK3:
             obstacleName = @"RoofStick3";
@@ -134,5 +133,8 @@ typedef enum obstacles {
 
 @implementation GravityBall
 
+- (void)didLoadFromCCB {
+    
+}
 @end
 

@@ -1,5 +1,6 @@
 #import "MainScene.h"
 #import "Obstacle.h"
+#import "cocos2d.h"
 
 static const CGFloat scrollSpeed = 80.f;
 
@@ -7,14 +8,17 @@ static const CGFloat scrollSpeed = 80.f;
     CCNode *_hero;
     CCPhysicsNode *_physicsNode;
     CCNode *_ground1, *_ground2, *_ground3, *_ground4;
+    CCNode *_roof1, *_roof2, *_roof3, *_roof4;
     CCButton *_restartButton;
     CCNode *_health1, *_health2, *_health3, *_health4, *_health5;
-    NSArray *_grounds;
+    NSArray *_grounds, *_roofs;
     BOOL _impulse,_normalGravity;
     NSMutableArray *_obstacles, *_healthSprites;
     NSTimeInterval _sinceTouch, _sinceLastObstacle, _checkOffScreenTime;
-    int _healthCount, i;
+    int _healthCount, i, _timeLeft;
     CGFloat _heroImpulse,_heroAngularImpulse;
+    CCLabelTTF *_countTime;
+    
     
 }
 
@@ -23,6 +27,26 @@ static const CGFloat scrollSpeed = 80.f;
     NSInteger r= min + arc4random_uniform((unsigned int)max);
     return r;
 }
+
+-(id) init {
+    if( (self=[super init] )) {
+        _timeLeft = 30;
+        [_countTime setString:[NSString stringWithFormat:@"%i", _timeLeft]];
+        
+        [self schedule:@selector(countDown:) interval:1.0f];
+    }
+    return self;
+}
+
+-(void)countDown:(CCTime)delta {
+    _timeLeft--;
+    [_countTime setString:[NSString stringWithFormat:@"%i", _timeLeft]];
+    if (_timeLeft <= 0) {
+        [self unschedule:@selector(countDown:)];
+        [self loseGame];
+    }
+}
+
 
 - (void)update:(CCTime)delta {
     if(_impulse==true){
@@ -43,6 +67,13 @@ static const CGFloat scrollSpeed = 80.f;
         CGPoint groundScreenPosition = [self convertToNodeSpace:groundWorldPosition];
         if (groundScreenPosition.x <= (-1 * ground.contentSize.width)) {
             ground.position = ccp(ground.position.x + 3.5 * ground.contentSize.width, ground.position.y);
+        }
+    }
+    for (CCNode *roof in _roofs) {
+        CGPoint roofWorldPosition = [_physicsNode convertToWorldSpace:roof.position];
+        CGPoint roofScreenPosition = [self convertToNodeSpace:roofWorldPosition];
+        if (roofScreenPosition.x <= (-1 * roof.contentSize.width)) {
+            roof.position = ccp(roof.position.x + 2.5 * roof.contentSize.width, roof.position.y);
         }
     }
     
@@ -82,6 +113,7 @@ static const CGFloat scrollSpeed = 80.f;
 
 - (void)didLoadFromCCB {
     _grounds = @[_ground1, _ground2, _ground3, _ground4];
+    _roofs = @[_roof1, _roof2, _roof3, _roof4];
     self.userInteractionEnabled = YES;
     _restartButton.visible = NO;
     _physicsNode.collisionDelegate = self;
@@ -173,6 +205,7 @@ static const CGFloat scrollSpeed = 80.f;
     _physicsNode.gravity = ccp(0,-400);
     _heroImpulse = 100.0f;
     _heroAngularImpulse = 300.0f;
+    _normalGravity = YES;
     return;
 }
 

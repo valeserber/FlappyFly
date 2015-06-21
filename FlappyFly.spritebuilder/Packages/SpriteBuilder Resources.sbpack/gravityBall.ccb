@@ -10,7 +10,7 @@
 		<false/>
 	</dict>
 	<key>UUID</key>
-	<integer>10</integer>
+	<integer>11</integer>
 	<key>centeredOrigin</key>
 	<false/>
 	<key>currentResolution</key>
@@ -143,9 +143,66 @@
 						<key>type</key>
 						<string>EffectControl</string>
 						<key>value</key>
-						<array/>
+						<array>
+							<dict>
+								<key>UUID</key>
+								<integer>10</integer>
+								<key>baseClass</key>
+								<string>CCEffectReflection</string>
+								<key>className</key>
+								<string>CCBPEffectReflection</string>
+								<key>properties</key>
+								<array>
+									<dict>
+										<key>name</key>
+										<string>fresnelBias</string>
+										<key>type</key>
+										<string>Float</string>
+										<key>value</key>
+										<real>1</real>
+									</dict>
+									<dict>
+										<key>name</key>
+										<string>fresnelPower</string>
+										<key>type</key>
+										<string>Float</string>
+										<key>value</key>
+										<real>3</real>
+									</dict>
+									<dict>
+										<key>name</key>
+										<string>shininess</string>
+										<key>type</key>
+										<string>Float</string>
+										<key>value</key>
+										<real>0.45867845416069031</real>
+									</dict>
+									<dict>
+										<key>name</key>
+										<string>environment</string>
+										<key>type</key>
+										<string>NodeReference</string>
+										<key>value</key>
+										<integer>1</integer>
+									</dict>
+									<dict>
+										<key>name</key>
+										<string>normalMap</string>
+										<key>type</key>
+										<string>SpriteFrame</string>
+										<key>value</key>
+										<array>
+											<string></string>
+											<string></string>
+										</array>
+									</dict>
+								</array>
+							</dict>
+						</array>
 					</dict>
 				</array>
+				<key>selected</key>
+				<true/>
 			</dict>
 		</array>
 		<key>customClass</key>
@@ -254,8 +311,6 @@
 				</array>
 			</dict>
 		</array>
-		<key>selected</key>
-		<true/>
 	</dict>
 	<key>notes</key>
 	<array/>
@@ -309,7 +364,7 @@
 			<key>name</key>
 			<string>Default Timeline</string>
 			<key>offset</key>
-			<real>0.18126106262207031</real>
+			<real>0.21251296997070312</real>
 			<key>position</key>
 			<real>0.0</real>
 			<key>resolution</key>

@@ -21,8 +21,8 @@
 
 - (void)update:(CCTime)delta {
     if(_throwMiniRoofStick > 4.0f) {
-        [self spawnMiniRoofStick:-7];
-        [self spawnMiniRoofStick:7];
+        [self spawnMiniRoofStick:-5];
+        [self spawnMiniRoofStick:5];
         _throwMiniRoofStick = 0;
     }
     _throwMiniRoofStick +=delta;
