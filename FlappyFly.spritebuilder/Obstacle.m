@@ -11,8 +11,8 @@
 #import "RoofStick.h"
 
 typedef enum obstacles {
-    BLACKY,
     SPIKY,
+    BLACKY,
     ROOFSTICK,
     CARNIVOROUS,
     STATUE,
@@ -32,10 +32,11 @@ typedef enum obstacles {
 
 + (Obstacle *) getRandomObstacle {
     NSString *obstacleName;
-    long r = arc4random_uniform(8);
+    int r = arc4random_uniform(8);
     switch (r) {
         case BLACKY:
-            return (Obstacle*)[CCBReader load:@"Blacky"];
+            obstacleName = @"Blacky";
+//            return (Obstacle*)[CCBReader load:@"Blacky"];
             break;
         case SPIKY:
             obstacleName = @"Spiky";
