@@ -512,8 +512,8 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>13.69444465637207</real>
-							<real>22.083332061767578</real>
+							<real>11.69444465637207</real>
+							<real>8.9999990463256836</real>
 							<integer>0</integer>
 							<integer>0</integer>
 							<integer>0</integer>
@@ -537,8 +537,8 @@
 						<string>ScaleLock</string>
 						<key>value</key>
 						<array>
-							<real>0.4555269181728363</real>
-							<real>0.50944417715072632</real>
+							<real>0.36573734879493713</real>
+							<real>0.39307054877281189</real>
 							<false/>
 							<integer>0</integer>
 						</array>
@@ -599,9 +599,9 @@
 			</dict>
 		</array>
 		<key>customClass</key>
-		<string></string>
+		<string>Obstacle</string>
 		<key>displayName</key>
-		<string>CCSprite</string>
+		<string>CCNode</string>
 		<key>memberVarAssignmentName</key>
 		<string></string>
 		<key>memberVarAssignmentType</key>

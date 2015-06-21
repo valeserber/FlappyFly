@@ -42,76 +42,6 @@
 			<dict>
 				<key>UUID</key>
 				<integer>1</integer>
-				<key>animatedProperties</key>
-				<dict>
-					<key>0</key>
-					<dict>
-						<key>spriteFrame</key>
-						<dict>
-							<key>keyframes</key>
-							<array>
-								<dict>
-									<key>easing</key>
-									<dict>
-										<key>type</key>
-										<integer>0</integer>
-									</dict>
-									<key>name</key>
-									<string>spriteFrame</string>
-									<key>time</key>
-									<real>0.0</real>
-									<key>type</key>
-									<integer>7</integer>
-									<key>value</key>
-									<array>
-										<string>FlappyFlyAssets/frame 3.png</string>
-										<string>Use regular file</string>
-									</array>
-								</dict>
-								<dict>
-									<key>easing</key>
-									<dict>
-										<key>type</key>
-										<integer>0</integer>
-									</dict>
-									<key>name</key>
-									<string>spriteFrame</string>
-									<key>time</key>
-									<real>0.13333334028720856</real>
-									<key>type</key>
-									<integer>7</integer>
-									<key>value</key>
-									<array>
-										<string>FlappyFlyAssets/frame-1 10.png</string>
-										<string>Use regular file</string>
-									</array>
-								</dict>
-								<dict>
-									<key>easing</key>
-									<dict>
-										<key>type</key>
-										<integer>0</integer>
-									</dict>
-									<key>name</key>
-									<string>spriteFrame</string>
-									<key>time</key>
-									<real>0.30000001192092896</real>
-									<key>type</key>
-									<integer>7</integer>
-									<key>value</key>
-									<array>
-										<string>FlappyFlyAssets/frame-2 10.png</string>
-										<string>Use regular file</string>
-									</array>
-								</dict>
-							</array>
-							<key>name</key>
-							<string>spriteFrame</string>
-							<key>type</key>
-							<integer>7</integer>
-						</dict>
-					</dict>
-				</dict>
 				<key>baseClass</key>
 				<string>CCSprite</string>
 				<key>children</key>
@@ -119,7 +49,7 @@
 				<key>customClass</key>
 				<string></string>
 				<key>displayName</key>
-				<string>frame 3</string>
+				<string>spike C</string>
 				<key>memberVarAssignmentName</key>
 				<string></string>
 				<key>memberVarAssignmentType</key>
@@ -141,8 +71,8 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>21.034896850585938</real>
 							<real>0.0</real>
+							<real>207</real>
 							<integer>0</integer>
 							<integer>0</integer>
 							<integer>0</integer>
@@ -166,18 +96,21 @@
 						<string>ScaleLock</string>
 						<key>value</key>
 						<array>
-							<real>0.50616884231567383</real>
-							<real>0.53289550542831421</real>
+							<real>1</real>
+							<real>1</real>
 							<false/>
 							<integer>0</integer>
 						</array>
 					</dict>
 					<dict>
-						<key>baseValue</key>
-						<array>
-							<string>FlappyFlyAssets/frame 3.png</string>
-							<string>Use regular file</string>
-						</array>
+						<key>name</key>
+						<string>rotation</string>
+						<key>type</key>
+						<string>Degrees</string>
+						<key>value</key>
+						<real>180</real>
+					</dict>
+					<dict>
 						<key>name</key>
 						<string>spriteFrame</string>
 						<key>type</key>
@@ -185,7 +118,7 @@
 						<key>value</key>
 						<array>
 							<string></string>
-							<string>FlappyFlyAssets/frame 3.png</string>
+							<string>FlappyFlyAssets/spike C.png</string>
 						</array>
 					</dict>
 					<dict>
@@ -221,12 +154,10 @@
 						<array/>
 					</dict>
 				</array>
-				<key>seqExpanded</key>
-				<true/>
 			</dict>
 		</array>
 		<key>customClass</key>
-		<string>Blacky</string>
+		<string>Obstacle</string>
 		<key>displayName</key>
 		<string>CCNode</string>
 		<key>memberVarAssignmentName</key>
@@ -238,13 +169,15 @@
 			<key>affectedByGravity</key>
 			<true/>
 			<key>allowsRotation</key>
-			<false/>
+			<true/>
 			<key>bodyShape</key>
 			<integer>0</integer>
 			<key>collisionCategories</key>
 			<array/>
 			<key>collisionMask</key>
-			<array/>
+			<array>
+				<string>coll</string>
+			</array>
 			<key>collisionType</key>
 			<string>obstacleCollision</string>
 			<key>cornerRadius</key>
@@ -252,7 +185,7 @@
 			<key>density</key>
 			<real>1</real>
 			<key>dynamic</key>
-			<true/>
+			<false/>
 			<key>elasticity</key>
 			<real>0.30000001192092896</real>
 			<key>friction</key>
@@ -260,72 +193,48 @@
 			<key>points</key>
 			<array>
 				<array>
-					<real>-14.57421875</real>
-					<real>-14.535140991210938</real>
+					<real>-35.2890625</real>
+					<real>245.08596801757812</real>
 				</array>
 				<array>
-					<real>-18.6171875</real>
-					<real>9.5078277587890625</real>
+					<real>-38.109375</real>
+					<real>284.40628051757812</real>
 				</array>
 				<array>
-					<real>-1.86328125</real>
-					<real>25.050796508789062</real>
+					<real>37.24609375</real>
+					<real>281.67190551757812</real>
 				</array>
 				<array>
-					<real>20.09375</real>
-					<real>32.953140258789062</real>
+					<real>38.28515625</real>
+					<real>249.64065551757812</real>
 				</array>
 				<array>
-					<real>54.902313232421875</real>
-					<real>30.23046875</real>
-				</array>
-				<array>
-					<real>45.695281982421875</real>
-					<real>-0.44921875</real>
-				</array>
-				<array>
-					<real>24.249969482421875</real>
-					<real>-37.34375</real>
-				</array>
-				<array>
-					<real>-5.62890625</real>
-					<real>-27.855453491210938</real>
+					<real>0.171875</real>
+					<real>131.92970275878906</real>
 				</array>
 			</array>
 			<key>polygons</key>
 			<array>
 				<array>
 					<array>
-						<real>-5.62890625</real>
-						<real>-27.855453491210938</real>
+						<real>0.171875</real>
+						<real>131.92970275878906</real>
 					</array>
 					<array>
-						<real>24.249969482421875</real>
-						<real>-37.34375</real>
+						<real>38.28515625</real>
+						<real>249.64065551757812</real>
 					</array>
 					<array>
-						<real>45.695281982421875</real>
-						<real>-0.44921875</real>
+						<real>37.24609375</real>
+						<real>281.67190551757812</real>
 					</array>
 					<array>
-						<real>54.902313232421875</real>
-						<real>30.23046875</real>
+						<real>-38.109375</real>
+						<real>284.40628051757812</real>
 					</array>
 					<array>
-						<real>20.09375</real>
-						<real>32.953140258789062</real>
-					</array>
-					<array>
-						<real>-1.86328125</real>
-						<real>25.050796508789062</real>
-					</array>
-					<array>
-						<real>-18.6171875</real>
-						<real>9.5078277587890625</real>
-					</array>
-					<array>
-						<real>-14.57421875</real>
-						<real>-14.535140991210938</real>
+						<real>-35.2890625</real>
+						<real>245.08596801757812</real>
 					</array>
 				</array>
 			</array>
@@ -441,15 +350,15 @@
 				<integer>12</integer>
 			</dict>
 			<key>chainedSequenceId</key>
-			<integer>0</integer>
+			<integer>-1</integer>
 			<key>length</key>
-			<real>0.3333333432674408</real>
+			<real>10</real>
 			<key>name</key>
 			<string>Default Timeline</string>
 			<key>offset</key>
 			<real>0.0</real>
 			<key>position</key>
-			<real>0.10000000149011612</real>
+			<real>0.0</real>
 			<key>resolution</key>
 			<real>30</real>
 			<key>scale</key>

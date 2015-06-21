@@ -63,7 +63,8 @@
 		927F61B9196C771E000F43EF /* iPhone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B71F590E188484E7003F4D28 /* iPhone@2x.png */; };
 		927F61BA196C771E000F43EF /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = B737896D180762440076A88C /* Default.png */; };
 		927F61BB196C771E000F43EF /* iPad-old.png in Resources */ = {isa = PBXBuildFile; fileRef = B71F5907188484E7003F4D28 /* iPad-old.png */; };
-		AC6CD0CB1B0FE75200F2C17C /* Obstacle.m in Sources */ = {isa = PBXBuildFile; fileRef = AC6CD0CA1B0FE75200F2C17C /* Obstacle.m */; };
+		AC226C321B34F154002EAAE5 /* RoofStick.m in Sources */ = {isa = PBXBuildFile; fileRef = AC226C311B34F154002EAAE5 /* RoofStick.m */; };
+		AC252AFF1B28ED1B0024A13B /* Obstacle.m in Sources */ = {isa = PBXBuildFile; fileRef = AC252AFE1B28ED1B0024A13B /* Obstacle.m */; };
 		B71F5911188484E7003F4D28 /* iPad-old.png in Resources */ = {isa = PBXBuildFile; fileRef = B71F5907188484E7003F4D28 /* iPad-old.png */; };
 		B71F5912188484E7003F4D28 /* iPad-old@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B71F5908188484E7003F4D28 /* iPad-old@2x.png */; };
 		B71F5913188484E7003F4D28 /* iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = B71F5909188484E7003F4D28 /* iPad.png */; };
@@ -174,8 +175,10 @@
 		7BF6AF9F1A425F9800FFF9BA /* JavaFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaFoundation.framework; path = "../../../../../../../Library/SBAndroid/Application Support/Developer/Shared/Xcode/Platforms/Android.platform/Developer/SDKs/SBAndroid.sdk/System/Library/Frameworks/JavaFoundation.framework"; sourceTree = "<group>"; };
 		8392007918EE8E3300B6C429 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
 		927F61BF196C771E000F43EF /* FlappyFly Android.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FlappyFly Android.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		AC6CD0CA1B0FE75200F2C17C /* Obstacle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Obstacle.m; sourceTree = "<group>"; };
-		AC6CD0D01B0FE84C00F2C17C /* Obstacle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Obstacle.h; sourceTree = "<group>"; };
+		AC226C301B34F11A002EAAE5 /* RoofStick.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RoofStick.h; sourceTree = "<group>"; };
+		AC226C311B34F154002EAAE5 /* RoofStick.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoofStick.m; sourceTree = "<group>"; };
+		AC252AFD1B28E5400024A13B /* Obstacle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Obstacle.h; sourceTree = "<group>"; };
+		AC252AFE1B28ED1B0024A13B /* Obstacle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Obstacle.m; sourceTree = "<group>"; };
 		B71F5907188484E7003F4D28 /* iPad-old.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iPad-old.png"; path = "Icons/iPad-old.png"; sourceTree = "<group>"; };
 		B71F5908188484E7003F4D28 /* iPad-old@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iPad-old@2x.png"; path = "Icons/iPad-old@2x.png"; sourceTree = "<group>"; };
 		B71F5909188484E7003F4D28 /* iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iPad.png; path = Icons/iPad.png; sourceTree = "<group>"; };
@@ -442,8 +445,10 @@
 				7A40362019DDEF0D007B6E8F /* Platforms */,
 				B7378992180767190076A88C /* MainScene.h */,
 				B7378993180767190076A88C /* MainScene.m */,
-				AC6CD0CA1B0FE75200F2C17C /* Obstacle.m */,
-				AC6CD0D01B0FE84C00F2C17C /* Obstacle.h */,
+				AC252AFD1B28E5400024A13B /* Obstacle.h */,
+				AC252AFE1B28ED1B0024A13B /* Obstacle.m */,
+				AC226C301B34F11A002EAAE5 /* RoofStick.h */,
+				AC226C311B34F154002EAAE5 /* RoofStick.m */,
 				D352B48019EC608A00829775 /* MetalShaders */,
 			);
 			name = Source;
@@ -822,8 +827,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				B73789871807631A0076A88C /* main.m in Sources */,
+				AC252AFF1B28ED1B0024A13B /* Obstacle.m in Sources */,
 				7A046D8C19E8A20E004C4763 /* MainScene.m in Sources */,
-				AC6CD0CB1B0FE75200F2C17C /* Obstacle.m in Sources */,
+				AC226C321B34F154002EAAE5 /* RoofStick.m in Sources */,
 				5B121038197487F2004C1E1D /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
