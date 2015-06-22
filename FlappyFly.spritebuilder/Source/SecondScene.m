@@ -1,18 +1,20 @@
 #import "SecondScene.h"
+#import "MainScene.h"
 #import "Obstacle.h"
 #import "cocos2d.h"
 
 typedef enum obstacles2 {
     ROOFSTICK,
-//    ROOFSTICK2,
-//    ROOFSTICK3,
-//    GRAVITYBALL,
+    BLACKY,
+    GRAVITYBALL,
+    WORM,
     SEMIWALL
 }obstacles2;
 
 @implementation SecondScene {
     CCNode *_ground1, *_ground2, *_ground3, *_ground4;
     CCNode *_roof1, *_roof2, *_roof3, *_roof4;
+    int _gravityCount;
 }
 
 + (SecondScene *) scene {
@@ -24,6 +26,7 @@ typedef enum obstacles2 {
 -(id) init {
     self= [super init];
     [super initScroll: 130.f initGround: 3.5 initRoof: 2.5 initObsDist: 310 initImpulse:70.f initInverseImpulse:-60.f];
+    _gravityCount = 0;
     return self;
 }
 
@@ -35,26 +38,36 @@ typedef enum obstacles2 {
 
 - (NSString *) getRandomObstacle {
     NSString *obstacleName;
-    int r = arc4random_uniform(2);
+    int r = arc4random_uniform(5);
     switch (r) {
         case ROOFSTICK:
             obstacleName = @"RoofStick";
             break;
-//        case ROOFSTICK2:
-//            obstacleName = @"RoofStick2";
-//            break;
-//        case ROOFSTICK3:
-//            obstacleName = @"RoofStick3";
-//            break;
-//        case GRAVITYBALL:
-//            obstacleName = @"gravityBall";
-//            break;
+        case BLACKY:
+            obstacleName = @"Blacky";
+            break;
+        case WORM:
+            obstacleName = @"Worm";
+            break;
+        case GRAVITYBALL:
+            if (_gravityCount == 2 ) return @"SemiWall";
+            obstacleName = @"gravityBall";
+            _gravityCount++;
+            break;
         case SEMIWALL:
             obstacleName = @"SemiWall";
         default:
             break;
     }
     return obstacleName;
+}
+
+- (void) onRestartClicked {
+    [[CCDirector sharedDirector] replaceScene:[SecondScene scene] withTransition: [CCTransition transitionCrossFadeWithDuration:1.0]];
+}
+
+- (void) onContinueClicked {
+//    [[CCDirector sharedDirector] resume: MainScene];
 }
 
 

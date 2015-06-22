@@ -1,6 +1,7 @@
 #import "MainScene.h"
 #import "FirstScene.h"
 #import "SecondScene.h"
+#import "CCTransition.h"
 #import "cocos2d.h"
 
 @implementation MainScene {
@@ -18,12 +19,12 @@
 
 - (void)onFirstLevelClicked:(id)sender
 {
-    [[CCDirector sharedDirector] replaceScene:[FirstScene scene]];
+    [[CCDirector sharedDirector] replaceScene:[FirstScene scene] withTransition: [CCTransition transitionCrossFadeWithDuration:1.0]];
 }
 
 - (void)onSecondLevelClicked:(id)sender
 {
-    [[CCDirector sharedDirector] replaceScene:[SecondScene scene]];
+    [[CCDirector sharedDirector] replaceScene:[SecondScene scene] withTransition: [CCTransition transitionCrossFadeWithDuration:1.0]];
 }
 
 - (void)didLoadFromCCB {

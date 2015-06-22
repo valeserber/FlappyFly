@@ -16,4 +16,8 @@
 
 - (void)didLoadFromCCB;
 
+- (void) onRestartClicked;
+
+- (void) onContinueClicked;
+
 @end

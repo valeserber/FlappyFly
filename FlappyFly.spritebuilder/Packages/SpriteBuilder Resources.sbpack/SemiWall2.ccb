@@ -146,7 +146,7 @@
 						<array/>
 					</dict>
 				</array>
-				<key>selected</key>
+				<key>seqExpanded</key>
 				<true/>
 			</dict>
 		</array>
@@ -187,40 +187,40 @@
 			<key>points</key>
 			<array>
 				<array>
-					<real>-20.35943603515625</real>
-					<real>-116.76171875</real>
+					<real>-21.371124267578125</real>
+					<real>-2.6328125</real>
 				</array>
 				<array>
-					<real>-20.31646728515625</real>
-					<real>66.59765625</real>
+					<real>-22.371124267578125</real>
+					<real>99.83203125</real>
 				</array>
 				<array>
-					<real>19.57415771484375</real>
-					<real>64.5546875</real>
+					<real>19.99212646484375</real>
+					<real>99.7890625</real>
 				</array>
 				<array>
-					<real>22.04681396484375</real>
-					<real>-114.8984375</real>
+					<real>20.78509521484375</real>
+					<real>-4.8984375</real>
 				</array>
 			</array>
 			<key>polygons</key>
 			<array>
 				<array>
 					<array>
-						<real>22.04681396484375</real>
-						<real>-114.8984375</real>
+						<real>20.78509521484375</real>
+						<real>-4.8984375</real>
 					</array>
 					<array>
-						<real>19.57415771484375</real>
-						<real>64.5546875</real>
+						<real>19.99212646484375</real>
+						<real>99.7890625</real>
 					</array>
 					<array>
-						<real>-20.31646728515625</real>
-						<real>66.59765625</real>
+						<real>-22.371124267578125</real>
+						<real>99.83203125</real>
 					</array>
 					<array>
-						<real>-20.35943603515625</real>
-						<real>-116.76171875</real>
+						<real>-21.371124267578125</real>
+						<real>-2.6328125</real>
 					</array>
 				</array>
 			</array>
@@ -287,6 +287,8 @@
 				</array>
 			</dict>
 		</array>
+		<key>selected</key>
+		<true/>
 	</dict>
 	<key>notes</key>
 	<array/>
@@ -336,7 +338,7 @@
 			<key>chainedSequenceId</key>
 			<integer>-1</integer>
 			<key>length</key>
-			<real>10</real>
+			<real>1</real>
 			<key>name</key>
 			<string>Default Timeline</string>
 			<key>offset</key>

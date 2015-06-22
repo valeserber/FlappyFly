@@ -26,6 +26,7 @@
     if( (self=[super init] )) {
         _gameFinished = false;
         _timeLeft = 30;
+        _healthCount = 5;
         [_countTime setString:[NSString stringWithFormat:@"%i", _timeLeft]];
         
         [self schedule:@selector(countDown:) interval:1.0f];
@@ -146,13 +147,22 @@
     _normalGravity = YES;
     _heroAngularImpulse = 300.0f;
     i=1;
-    _healthCount = 5;
     _healthSprites = [NSMutableArray array];
     [_healthSprites addObject:_health1];
     [_healthSprites addObject:_health2];
     [_healthSprites addObject:_health3];
     [_healthSprites addObject:_health4];
     [_healthSprites addObject:_health5];
+    [_restartButton setTarget:self selector:@selector(onRestartClicked)];
+    [_continueButton setTarget:self selector:@selector(onContinueClicked)];
+}
+
+- (void) onRestartClicked {
+    
+}
+
+- (void) onContinueClicked {
+    
 }
 
 - (void)touchBegan:(UITouch *)touch withEvent:(UIEvent *)event {
@@ -214,6 +224,7 @@
     explosion.position = _hero.position;
     [_physicsNode addChild:explosion];
     
+    if (_gameFinished == true) return NO;
     if (_healthCount != 1) {
         _healthCount--;
         [self loseLife:_healthCount];

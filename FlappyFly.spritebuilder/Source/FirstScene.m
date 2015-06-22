@@ -1,4 +1,5 @@
 #import "FirstScene.h"
+#import "SecondScene.h"
 #import "Obstacle.h"
 #import "cocos2d.h"
 
@@ -68,6 +69,14 @@ typedef enum obstacles {
             break;
     }
     return obstacleName;
+}
+
+- (void) onRestartClicked {
+    [[CCDirector sharedDirector] replaceScene:[FirstScene scene] withTransition: [CCTransition transitionCrossFadeWithDuration:1.0]];
+}
+
+- (void) onContinueClicked {
+    [[CCDirector sharedDirector] replaceScene:[SecondScene scene] withTransition: [CCTransition transitionCrossFadeWithDuration:1.0]];
 }
 
 @end
