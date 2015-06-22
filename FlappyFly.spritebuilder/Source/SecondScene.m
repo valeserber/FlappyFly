@@ -1,16 +1,16 @@
-#import "FirstScene.h"
+#import "SecondScene.h"
 #import "Obstacle.h"
 #import "cocos2d.h"
 
-@implementation FirstScene {
+@implementation SecondScene {
     CCNode *_ground1, *_ground2, *_ground3, *_ground4;
     CCNode *_roof1, *_roof2, *_roof3, *_roof4;
 }
 
-+ (FirstScene *) scene {
++ (SecondScene *) scene {
     CCScene* scene = [[CCScene alloc] init];
-    [scene addChild:[CCBReader load: @"FirstScene"]];
-    return (FirstScene*)scene;
+    [scene addChild:[CCBReader load: @"SecondScene"]];
+    return (SecondScene*)scene;
 }
 
 -(id) init {

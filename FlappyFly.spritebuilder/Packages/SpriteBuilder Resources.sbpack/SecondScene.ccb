@@ -112,7 +112,7 @@
 						<key>value</key>
 						<array>
 							<string></string>
-							<string>FlappyFlyAssets/full-bg.png</string>
+							<string>FlappyFlyAssets/full-bg 2.png</string>
 						</array>
 					</dict>
 					<dict>
@@ -200,40 +200,40 @@
 							<key>points</key>
 							<array>
 								<array>
-									<real>-6.8074951171875</real>
-									<real>1.1875</real>
+									<real>-39.397354125976562</real>
+									<real>-9.76953125</real>
 								</array>
 								<array>
-									<real>-0.2684326171875</real>
-									<real>23.4921875</real>
+									<real>-23.202056884765625</real>
+									<real>21.1796875</real>
 								</array>
 								<array>
-									<real>23.3057861328125</real>
-									<real>21.7578125</real>
+									<real>18.9698486328125</real>
+									<real>26.44140625</real>
 								</array>
 								<array>
-									<real>18.583099365234375</real>
-									<real>-1.8984375</real>
+									<real>11.469818115234375</real>
+									<real>-19.01953125</real>
 								</array>
 							</array>
 							<key>polygons</key>
 							<array>
 								<array>
 									<array>
-										<real>18.583099365234375</real>
-										<real>-1.8984375</real>
+										<real>11.469818115234375</real>
+										<real>-19.01953125</real>
 									</array>
 									<array>
-										<real>23.3057861328125</real>
-										<real>21.7578125</real>
+										<real>18.9698486328125</real>
+										<real>26.44140625</real>
 									</array>
 									<array>
-										<real>-0.2684326171875</real>
-										<real>23.4921875</real>
+										<real>-23.202056884765625</real>
+										<real>21.1796875</real>
 									</array>
 									<array>
-										<real>-6.8074951171875</real>
-										<real>1.1875</real>
+										<real>-39.397354125976562</real>
+										<real>-9.76953125</real>
 									</array>
 								</array>
 							</array>
@@ -255,8 +255,8 @@
 								<string>Position</string>
 								<key>value</key>
 								<array>
-									<real>199.28851318359375</real>
-									<real>212</real>
+									<real>179.28851318359375</real>
+									<real>222</real>
 									<integer>0</integer>
 									<integer>0</integer>
 									<integer>0</integer>
@@ -281,7 +281,7 @@
 								<key>type</key>
 								<string>CCBFile</string>
 								<key>value</key>
-								<string>Hero.ccb</string>
+								<string>Hero2.ccb</string>
 							</dict>
 						</array>
 						<key>selected</key>
@@ -2917,7 +2917,7 @@
 						<string>Text</string>
 						<key>value</key>
 						<array>
-							<string>Level 1
+							<string>Level 2
 </string>
 							<false/>
 						</array>
@@ -3836,7 +3836,7 @@
 			</dict>
 		</array>
 		<key>customClass</key>
-		<string>FirstScene</string>
+		<string>SecondScene</string>
 		<key>displayName</key>
 		<string>CCNode</string>
 		<key>memberVarAssignmentName</key>

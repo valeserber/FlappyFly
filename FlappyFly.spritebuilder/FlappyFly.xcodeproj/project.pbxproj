@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		3971531C1B378675002CA00A /* FirstScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 3971531B1B378675002CA00A /* FirstScene.m */; };
+		397153271B37A8C5002CA00A /* SecondScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 397153261B37A8C5002CA00A /* SecondScene.m */; };
+		3971532C1B37A953002CA00A /* LevelScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 3971532B1B37A953002CA00A /* LevelScene.m */; };
 		5B121030197484FA004C1E1D /* FlappyFlyActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B12102F197484FA004C1E1D /* FlappyFlyActivity.m */; };
 		5B121038197487F2004C1E1D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B737893E1807617C0076A88C /* AppDelegate.m */; };
 		7A046D8C19E8A20E004C4763 /* MainScene.m in Sources */ = {isa = PBXBuildFile; fileRef = B7378993180767190076A88C /* MainScene.m */; };
@@ -154,6 +156,10 @@
 /* Begin PBXFileReference section */
 		3971531B1B378675002CA00A /* FirstScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FirstScene.m; path = Source/FirstScene.m; sourceTree = "<group>"; };
 		3971531F1B3786B5002CA00A /* FirstScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstScene.h; sourceTree = "<group>"; };
+		397153261B37A8C5002CA00A /* SecondScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SecondScene.m; path = Source/SecondScene.m; sourceTree = "<group>"; };
+		3971532A1B37A8DA002CA00A /* SecondScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SecondScene.h; path = Source/SecondScene.h; sourceTree = "<group>"; };
+		3971532B1B37A953002CA00A /* LevelScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LevelScene.m; path = Source/LevelScene.m; sourceTree = "<group>"; };
+		3971532D1B37A972002CA00A /* LevelScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = LevelScene.h; path = Source/LevelScene.h; sourceTree = "<group>"; };
 		5B12100919748273004C1E1D /* libEGL.so */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libEGL.so; path = /usr/lib/armv7a/libEGL.so; sourceTree = SDKROOT; };
 		5B12100F197483EE004C1E1D /* ic_launcher.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_launcher.png; sourceTree = "<group>"; };
 		5B121011197483EE004C1E1D /* ic_launcher.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_launcher.png; sourceTree = "<group>"; };
@@ -455,6 +461,10 @@
 				D352B48019EC608A00829775 /* MetalShaders */,
 				3971531B1B378675002CA00A /* FirstScene.m */,
 				3971531F1B3786B5002CA00A /* FirstScene.h */,
+				397153261B37A8C5002CA00A /* SecondScene.m */,
+				3971532A1B37A8DA002CA00A /* SecondScene.h */,
+				3971532B1B37A953002CA00A /* LevelScene.m */,
+				3971532D1B37A972002CA00A /* LevelScene.h */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -831,10 +841,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				397153271B37A8C5002CA00A /* SecondScene.m in Sources */,
 				B73789871807631A0076A88C /* main.m in Sources */,
 				3971531C1B378675002CA00A /* FirstScene.m in Sources */,
 				AC252AFF1B28ED1B0024A13B /* Obstacle.m in Sources */,
 				7A046D8C19E8A20E004C4763 /* MainScene.m in Sources */,
+				3971532C1B37A953002CA00A /* LevelScene.m in Sources */,
 				AC226C321B34F154002EAAE5 /* RoofStick.m in Sources */,
 				5B121038197487F2004C1E1D /* AppDelegate.m in Sources */,
 			);
