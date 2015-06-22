@@ -9,17 +9,15 @@ static const CGFloat scrollSpeed = 80.f;
     CCPhysicsNode *_physicsNode;
     CCNode *_ground1, *_ground2, *_ground3, *_ground4;
     CCNode *_roof1, *_roof2, *_roof3, *_roof4;
-    CCButton *_restartButton;
+    CCButton *_restartButton, *_continueButton;
     CCNode *_health1, *_health2, *_health3, *_health4, *_health5;
     NSArray *_grounds, *_roofs;
-    BOOL _impulse,_normalGravity;
+    BOOL _impulse,_normalGravity, _gameFinished;
     NSMutableArray *_obstacles, *_healthSprites;
     NSTimeInterval _sinceTouch, _sinceLastObstacle, _checkOffScreenTime;
     int _healthCount, i, _timeLeft;
     CGFloat _heroImpulse,_heroAngularImpulse;
-    CCLabelTTF *_countTime;
-    
-    
+    CCLabelTTF *_countTime, *_gameLost, *_gameWon;
 }
 
 + (NSInteger)randomNumberBetween:(NSInteger)min maxNumber:(NSInteger)max
@@ -36,6 +34,7 @@ static const CGFloat scrollSpeed = 80.f;
 
 -(id) init {
     if( (self=[super init] )) {
+        _gameFinished = false;
         _timeLeft = 30;
         [_countTime setString:[NSString stringWithFormat:@"%i", _timeLeft]];
         
@@ -49,12 +48,20 @@ static const CGFloat scrollSpeed = 80.f;
     [_countTime setString:[NSString stringWithFormat:@"%i", _timeLeft]];
     if (_timeLeft <= 0) {
         [self unschedule:@selector(countDown:)];
-        [self loseGame];
+        if (_healthCount > 1) {
+            [self winGame];
+        } else {
+            [self loseGame];
+        }
     }
 }
 
 
 - (void)update:(CCTime)delta {
+    if (_gameFinished == true) {
+        return;
+    }
+    
     if(_impulse==true){
         [_hero.physicsBody applyImpulse:ccp(0, _heroImpulse)];
         [_hero.physicsBody applyAngularImpulse:_heroAngularImpulse];
@@ -122,6 +129,9 @@ static const CGFloat scrollSpeed = 80.f;
     _roofs = @[_roof1, _roof2, _roof3, _roof4];
     self.userInteractionEnabled = YES;
     _restartButton.visible = NO;
+    _gameLost.visible = NO;
+    _gameWon.visible = NO;
+    _continueButton.visible = NO;
     _physicsNode.collisionDelegate = self;
     _obstacles = [NSMutableArray array];
     _sinceLastObstacle = 0.f;
@@ -172,7 +182,15 @@ static const CGFloat scrollSpeed = 80.f;
 }
 
 -(void) loseGame {
+    _gameFinished = true;
     _restartButton.visible = YES;
+    _gameLost.visible = YES;
+}
+
+-(void) winGame {
+    _gameFinished = true;
+    _gameWon.visible = YES;
+    _continueButton.visible = YES;
 }
 
 -(void) checkOffScreen {
