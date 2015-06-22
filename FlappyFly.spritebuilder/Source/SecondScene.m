@@ -2,6 +2,13 @@
 #import "Obstacle.h"
 #import "cocos2d.h"
 
+typedef enum obstacles2 {
+    ROOFSTICK,
+    ROOFSTICK2,
+    ROOFSTICK3,
+    GRAVITYBALL
+}obstacles2;
+
 @implementation SecondScene {
     CCNode *_ground1, *_ground2, *_ground3, *_ground4;
     CCNode *_roof1, *_roof2, *_roof3, *_roof4;
@@ -24,5 +31,28 @@
     _roofs = @[_roof1, _roof2, _roof3, _roof4];
     [super didLoadFromCCB];
 }
+
+- (NSString *) getRandomObstacle {
+    NSString *obstacleName;
+    int r = arc4random_uniform(4);
+    switch (r) {
+        case ROOFSTICK:
+            obstacleName = @"RoofStick";
+            break;
+        case ROOFSTICK2:
+            obstacleName = @"RoofStick2";
+            break;
+        case ROOFSTICK3:
+            obstacleName = @"RoofStick3";
+            break;
+        case GRAVITYBALL:
+            obstacleName = @"gravityBall";
+            break;
+        default:
+            break;
+    }
+    return obstacleName;
+}
+
 
 @end

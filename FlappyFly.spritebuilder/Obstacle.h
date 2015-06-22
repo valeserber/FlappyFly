@@ -13,8 +13,8 @@
 @interface Obstacle : CCNode
 
 + (NSInteger)randomNumberBetween:(NSInteger)min maxNumber:(NSInteger)max;
-+ (Obstacle*)getRandomObstacle;
 - (NSInteger)getVerticalPosition;
+- (id) initWithObstacleName: (NSString *)obstacleName;
 
 @end
 

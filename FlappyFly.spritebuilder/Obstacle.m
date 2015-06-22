@@ -10,16 +10,7 @@
 #import "Obstacle.h"
 #import "RoofStick.h"
 
-typedef enum obstacles {
-    SPIKY,
-    BLACKY,
-    ROOFSTICK,
-    CARNIVOROUS,
-    STATUE,
-    ROOFSTICK2,
-    ROOFSTICK3,
-    GRAVITYBALL
-}obstacles;
+
 
 @implementation Obstacle {
     
@@ -30,47 +21,15 @@ typedef enum obstacles {
     return self;
 }
 
-+ (Obstacle *) getRandomObstacle {
-    NSString *obstacleName;
-    int r = arc4random_uniform(8);
-    switch (r) {
-        case BLACKY:
-            obstacleName = @"Blacky";
-            break;
-        case SPIKY:
-            obstacleName = @"Spiky";
-            break;
-        case CARNIVOROUS:
-            obstacleName = @"Carnivorous";
-            break;
-        case ROOFSTICK:
-            obstacleName = @"RoofStick";
-            break;
-        case STATUE:
-            obstacleName = @"Statue";
-            break;
-        case ROOFSTICK2:
-            obstacleName = @"RoofStick2";
-            break;
-        case ROOFSTICK3:
-            obstacleName = @"RoofStick3";
-            break;
-        case GRAVITYBALL:
-            obstacleName = @"gravityBall";
-            break;
-        default:
-            break;
-    }
-    return [[self alloc] initWithObstacleName:obstacleName];
-}
-
 + (NSInteger)randomNumberBetween:(NSInteger)min maxNumber:(NSInteger)max
 {
     NSInteger r= min + arc4random_uniform((unsigned int)max);
     return r;
 }
+
 - (void) update:(CCTime)delta
 {
+    
 }
 
 -(NSInteger)getVerticalPosition {
@@ -78,6 +37,7 @@ typedef enum obstacles {
 }
 
 @end
+
 @implementation Statue {
     NSTimeInterval _movementInterval;
 }

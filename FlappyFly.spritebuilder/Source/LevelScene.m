@@ -47,6 +47,10 @@
     _inverseImpulse = invImp;
 }
 
+- (NSString *) getRandomObstacle {
+    return nil;
+}
+
 -(void)countDown: (CCTime)delta {
     _timeLeft--;
     [_countTime setString:[NSString stringWithFormat:@"%i", _timeLeft]];
@@ -118,7 +122,8 @@
 }
 
 - (void)spawnNewObstacle: (int) x {
-    Obstacle* _obstacle = [Obstacle getRandomObstacle];
+    NSString * obstacleName = [self getRandomObstacle];
+    Obstacle * _obstacle = [[Obstacle alloc] initWithObstacleName:obstacleName];
     CGSize winSize = [CCDirector sharedDirector].viewSize;
     NSInteger r = [LevelScene randomNumberBetween: 0 maxNumber: 140];
     CGPoint point = ccp(winSize.width + x + r, [_obstacle getVerticalPosition]);
