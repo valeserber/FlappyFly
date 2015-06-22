@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		396FF11C1B38AFBD00452B5B /* SemiWall.m in Sources */ = {isa = PBXBuildFile; fileRef = 396FF11B1B38AFBD00452B5B /* SemiWall.m */; };
 		3971531C1B378675002CA00A /* FirstScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 3971531B1B378675002CA00A /* FirstScene.m */; };
 		397153271B37A8C5002CA00A /* SecondScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 397153261B37A8C5002CA00A /* SecondScene.m */; };
 		3971532C1B37A953002CA00A /* LevelScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 3971532B1B37A953002CA00A /* LevelScene.m */; };
@@ -154,6 +155,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		396FF11B1B38AFBD00452B5B /* SemiWall.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SemiWall.m; path = Source/SemiWall.m; sourceTree = "<group>"; };
+		396FF11F1B38AFD100452B5B /* SemiWall.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SemiWall.h; path = Source/SemiWall.h; sourceTree = "<group>"; };
 		3971531B1B378675002CA00A /* FirstScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FirstScene.m; path = Source/FirstScene.m; sourceTree = "<group>"; };
 		3971531F1B3786B5002CA00A /* FirstScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstScene.h; sourceTree = "<group>"; };
 		397153261B37A8C5002CA00A /* SecondScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SecondScene.m; path = Source/SecondScene.m; sourceTree = "<group>"; };
@@ -457,7 +460,9 @@
 				AC252AFD1B28E5400024A13B /* Obstacle.h */,
 				AC252AFE1B28ED1B0024A13B /* Obstacle.m */,
 				AC226C301B34F11A002EAAE5 /* RoofStick.h */,
+				396FF11F1B38AFD100452B5B /* SemiWall.h */,
 				AC226C311B34F154002EAAE5 /* RoofStick.m */,
+				396FF11B1B38AFBD00452B5B /* SemiWall.m */,
 				D352B48019EC608A00829775 /* MetalShaders */,
 				3971531B1B378675002CA00A /* FirstScene.m */,
 				3971531F1B3786B5002CA00A /* FirstScene.h */,
@@ -841,6 +846,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				396FF11C1B38AFBD00452B5B /* SemiWall.m in Sources */,
 				397153271B37A8C5002CA00A /* SecondScene.m in Sources */,
 				B73789871807631A0076A88C /* main.m in Sources */,
 				3971531C1B378675002CA00A /* FirstScene.m in Sources */,

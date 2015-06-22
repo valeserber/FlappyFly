@@ -3,10 +3,11 @@
 #import "cocos2d.h"
 
 typedef enum obstacles2 {
-    ROOFSTICK,
-    ROOFSTICK2,
-    ROOFSTICK3,
-    GRAVITYBALL
+//    ROOFSTICK,
+//    ROOFSTICK2,
+//    ROOFSTICK3,
+    GRAVITYBALL,
+    SEMIWALL
 }obstacles2;
 
 @implementation SecondScene {
@@ -34,20 +35,22 @@ typedef enum obstacles2 {
 
 - (NSString *) getRandomObstacle {
     NSString *obstacleName;
-    int r = arc4random_uniform(4);
+    int r = arc4random_uniform(2);
     switch (r) {
-        case ROOFSTICK:
-            obstacleName = @"RoofStick";
-            break;
-        case ROOFSTICK2:
-            obstacleName = @"RoofStick2";
-            break;
-        case ROOFSTICK3:
-            obstacleName = @"RoofStick3";
-            break;
+//        case ROOFSTICK:
+//            obstacleName = @"RoofStick";
+//            break;
+//        case ROOFSTICK2:
+//            obstacleName = @"RoofStick2";
+//            break;
+//        case ROOFSTICK3:
+//            obstacleName = @"RoofStick3";
+//            break;
         case GRAVITYBALL:
             obstacleName = @"gravityBall";
             break;
+        case SEMIWALL:
+            obstacleName = @"SemiWall";
         default:
             break;
     }
