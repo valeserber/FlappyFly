@@ -3,7 +3,7 @@
 
 #import "cocos2d.h"
 
-@interface MainScene : CCScene
+@interface MainScene : CCScene <CCPhysicsCollisionDelegate>
 
 - (id)init;
 

@@ -3,6 +3,7 @@
 #import "cocos2d.h"
 
 @implementation MainScene {
+    CCNode *_hero;
     CCButton *_button1;
 }
 
