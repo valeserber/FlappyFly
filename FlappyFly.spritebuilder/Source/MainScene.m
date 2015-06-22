@@ -19,11 +19,13 @@
 
 - (void)onFirstLevelClicked:(id)sender
 {
+    [[CCDirector sharedDirector] pushScene:self];
     [[CCDirector sharedDirector] replaceScene:[FirstScene scene] withTransition: [CCTransition transitionCrossFadeWithDuration:1.0]];
 }
 
 - (void)onSecondLevelClicked:(id)sender
 {
+    [[CCDirector sharedDirector] pushScene:self];
     [[CCDirector sharedDirector] replaceScene:[SecondScene scene] withTransition: [CCTransition transitionCrossFadeWithDuration:1.0]];
 }
 

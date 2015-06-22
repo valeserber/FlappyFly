@@ -67,7 +67,7 @@ typedef enum obstacles2 {
 }
 
 - (void) onContinueClicked {
-//    [[CCDirector sharedDirector] resume: MainScene];
+    [[CCDirector sharedDirector] popScene];
 }
 
 
