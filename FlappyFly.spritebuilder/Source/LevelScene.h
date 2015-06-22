@@ -6,7 +6,12 @@
 
 }
 
--(void) initScroll: (CGFloat)scroll initGround: (CGFloat)ground initRoof: (CGFloat) roof;
+-(void) initScroll: (CGFloat)scroll
+        initGround: (CGFloat)ground
+        initRoof: (CGFloat) roof
+        initObsDist: (CGFloat) dist
+        initImpulse: (CGFloat) imp
+        initInverseImpulse: (CGFloat) invImp;
 
 - (void)didLoadFromCCB;
 

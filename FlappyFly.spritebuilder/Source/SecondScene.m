@@ -15,7 +15,7 @@
 
 -(id) init {
     self= [super init];
-    [super initScroll: 80.f initGround: 3.5 initRoof: 2.5];
+    [super initScroll: 130.f initGround: 3.5 initRoof: 2.5 initObsDist: 310 initImpulse:70.f initInverseImpulse:-60.f];
     return self;
 }
 

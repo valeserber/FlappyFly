@@ -5,18 +5,15 @@
 @implementation LevelScene {
     CCNode *_hero;
     CCPhysicsNode *_physicsNode;
-//    CCNode *_ground1, *_ground2, *_ground3, *_ground4;
-//    CCNode *_roof1, *_roof2, *_roof3, *_roof4;
     CCButton *_restartButton, *_continueButton;
     CCNode *_health1, *_health2, *_health3, *_health4, *_health5;
-//    @protected NSArray *_grounds, *_roofs;
     BOOL _impulse,_normalGravity, _gameFinished;
     NSMutableArray *_obstacles, *_healthSprites;
     NSTimeInterval _sinceTouch, _sinceLastObstacle, _checkOffScreenTime;
     int _healthCount, i, _timeLeft;
-    CGFloat _heroImpulse,_heroAngularImpulse, _scrollSpeed;
+    CGFloat _heroImpulse,_heroAngularImpulse, _scrollSpeed, _restoreImpulse, _inverseImpulse;
     CCLabelTTF *_countTime, *_gameLost, *_gameWon;
-    CGFloat _groundVar, _roofVar;
+    CGFloat _groundVar, _roofVar, _obstDistVar;
 }
 
 + (NSInteger)randomNumberBetween:(NSInteger)min maxNumber:(NSInteger)max
@@ -36,10 +33,18 @@
     return self;
 }
 
--(void) initScroll: (CGFloat)scroll initGround: (CGFloat)ground initRoof: (CGFloat) roof {
+-(void) initScroll: (CGFloat)scroll
+        initGround: (CGFloat)ground
+        initRoof: (CGFloat) roof
+        initObsDist: (CGFloat) dist
+        initImpulse: (CGFloat) imp
+        initInverseImpulse:(CGFloat)invImp {
     _scrollSpeed = scroll;
     _groundVar = ground;
     _roofVar = roof;
+    _obstDistVar = dist;
+    _heroImpulse = imp;
+    _inverseImpulse = invImp;
 }
 
 -(void)countDown: (CCTime)delta {
@@ -71,7 +76,7 @@
     
     
     //BORRAR
-    //_physicsNode.debugDraw = YES;
+//    _physicsNode.debugDraw = YES;
     
     
     for (CCNode *ground in _grounds) {
@@ -104,7 +109,7 @@
     }
     if (_sinceLastObstacle >= 2.f) {
         _sinceLastObstacle = 0.f;
-        [self spawnNewObstacle: 210 *i++];
+        [self spawnNewObstacle: _obstDistVar *i++];
     }
     if (_checkOffScreenTime >= 1.0f) {
         _checkOffScreenTime = 0.f;
@@ -133,7 +138,6 @@
     _obstacles = [NSMutableArray array];
     _sinceLastObstacle = 0.f;
     _checkOffScreenTime = 0.f;
-    _heroImpulse = 100.0f;
     _normalGravity = YES;
     _heroAngularImpulse = 300.0f;
     i=1;
@@ -218,13 +222,14 @@
 -(void)changeGravity {
     if(_normalGravity){
         _physicsNode.gravity = ccp(0,400);
-        _heroImpulse = -60.0f;
+        _restoreImpulse = _heroImpulse;
+        _heroImpulse = _inverseImpulse;
         _heroAngularImpulse = -300.0f;
         _normalGravity = NO;
         return;
     }
     _physicsNode.gravity = ccp(0,-400);
-    _heroImpulse = 100.0f;
+    _heroImpulse = _restoreImpulse;
     _heroAngularImpulse = 300.0f;
     _normalGravity = YES;
     return;
