@@ -36,6 +36,7 @@
     CCNode *_miniRoofStick = [CCBReader load:@"RoofStickProjectile"];
     CGPoint point = self.position;
     _miniRoofStick.position = ccp(point.x+r,point.y);
+    _miniRoofStick.physicsBody.velocity = CGPointMake(0,-500);
     [self.physicsNode addChild:_miniRoofStick];
 }
 @end

@@ -17,6 +17,12 @@
     return self;
 }
 
++ (MainScene *) scene {
+    CCScene* scene = [[CCScene alloc] init];
+    [scene addChild:[CCBReader load: @"MainScene"]];
+    return (MainScene*)scene;
+}
+
 - (void)onFirstLevelClicked:(id)sender
 {
     [[CCDirector sharedDirector] pushScene:self];

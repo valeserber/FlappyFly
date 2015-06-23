@@ -1013,9 +1013,11 @@
 							<key>collisionCategories</key>
 							<array/>
 							<key>collisionMask</key>
-							<array/>
+							<array>
+								<string>coll</string>
+							</array>
 							<key>collisionType</key>
-							<string></string>
+							<string>roofCollision</string>
 							<key>cornerRadius</key>
 							<real>0.0</real>
 							<key>density</key>
@@ -1159,6 +1161,8 @@
 								<array/>
 							</dict>
 						</array>
+						<key>selected</key>
+						<true/>
 					</dict>
 					<dict>
 						<key>UUID</key>
@@ -1186,9 +1190,11 @@
 							<key>collisionCategories</key>
 							<array/>
 							<key>collisionMask</key>
-							<array/>
+							<array>
+								<string>coll</string>
+							</array>
 							<key>collisionType</key>
-							<string></string>
+							<string>roofCollision</string>
 							<key>cornerRadius</key>
 							<real>0.0</real>
 							<key>density</key>
@@ -1359,9 +1365,11 @@
 							<key>collisionCategories</key>
 							<array/>
 							<key>collisionMask</key>
-							<array/>
+							<array>
+								<string>coll</string>
+							</array>
 							<key>collisionType</key>
-							<string></string>
+							<string>roofCollision</string>
 							<key>cornerRadius</key>
 							<real>0.0</real>
 							<key>density</key>
@@ -1532,9 +1540,11 @@
 							<key>collisionCategories</key>
 							<array/>
 							<key>collisionMask</key>
-							<array/>
+							<array>
+								<string>coll</string>
+							</array>
 							<key>collisionType</key>
-							<string></string>
+							<string>roofCollision</string>
 							<key>cornerRadius</key>
 							<real>0.0</real>
 							<key>density</key>
@@ -1897,7 +1907,20 @@
 						<key>value</key>
 						<array>
 							<string></string>
-							<string>ccbResources/ccbButtonNormal.png</string>
+							<string>FlappyFlyAssets/button.png</string>
+						</array>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>labelColor|Normal</string>
+						<key>type</key>
+						<string>Color3</string>
+						<key>value</key>
+						<array>
+							<real>0.20000000298023224</real>
+							<real>0.20000000298023224</real>
+							<real>0.20000000298023224</real>
+							<real>1</real>
 						</array>
 					</dict>
 					<dict>
@@ -1908,7 +1931,7 @@
 						<key>value</key>
 						<array>
 							<string></string>
-							<string>ccbResources/ccbButtonHighlighted.png</string>
+							<string>FlappyFlyAssets/button.png</string>
 						</array>
 					</dict>
 					<dict>
@@ -1932,7 +1955,7 @@
 						<key>value</key>
 						<array>
 							<string></string>
-							<string>ccbResources/ccbButtonNormal.png</string>
+							<string>FlappyFlyAssets/button.png</string>
 						</array>
 					</dict>
 					<dict>
@@ -1951,7 +1974,7 @@
 						<key>value</key>
 						<array>
 							<string></string>
-							<string>ccbResources/ccbButtonNormal.png</string>
+							<string>FlappyFlyAssets/button.png</string>
 						</array>
 					</dict>
 					<dict>
@@ -2063,10 +2086,10 @@
 						<string>Color4</string>
 						<key>value</key>
 						<array>
-							<real>0.0</real>
-							<real>0.0</real>
-							<real>0.0</real>
-							<real>127</real>
+							<real>1</real>
+							<real>1</real>
+							<real>1</real>
+							<real>1</real>
 						</array>
 					</dict>
 					<dict>
@@ -3633,7 +3656,20 @@
 						<key>value</key>
 						<array>
 							<string></string>
-							<string>ccbResources/ccbButtonNormal.png</string>
+							<string>FlappyFlyAssets/button.png</string>
+						</array>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>labelColor|Normal</string>
+						<key>type</key>
+						<string>Color3</string>
+						<key>value</key>
+						<array>
+							<real>0.0</real>
+							<real>0.0</real>
+							<real>0.0</real>
+							<real>1</real>
 						</array>
 					</dict>
 					<dict>
@@ -3644,7 +3680,7 @@
 						<key>value</key>
 						<array>
 							<string></string>
-							<string>ccbResources/ccbButtonHighlighted.png</string>
+							<string>FlappyFlyAssets/button.png</string>
 						</array>
 					</dict>
 					<dict>
@@ -3668,7 +3704,7 @@
 						<key>value</key>
 						<array>
 							<string></string>
-							<string>ccbResources/ccbButtonNormal.png</string>
+							<string>FlappyFlyAssets/button.png</string>
 						</array>
 					</dict>
 					<dict>
@@ -3687,7 +3723,7 @@
 						<key>value</key>
 						<array>
 							<string></string>
-							<string>ccbResources/ccbButtonNormal.png</string>
+							<string>FlappyFlyAssets/button.png</string>
 						</array>
 					</dict>
 					<dict>
@@ -3802,7 +3838,7 @@
 							<real>0.0</real>
 							<real>0.0</real>
 							<real>0.0</real>
-							<real>127</real>
+							<real>0.44999998807907104</real>
 						</array>
 					</dict>
 					<dict>

@@ -1,4 +1,5 @@
 #import "PauseScene.h"
+#import "MainScene.h"
 
 @implementation PauseScene {
     CCButton *_resumeButton;
@@ -23,4 +24,7 @@
     [[CCDirector sharedDirector] popScene];
 }
 
+- (void) onExitClicked {
+    [[CCDirector sharedDirector] replaceScene:[MainScene scene] withTransition: [CCTransition transitionCrossFadeWithDuration:1.0]];
+}
 @end

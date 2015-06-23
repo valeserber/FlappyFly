@@ -18,11 +18,11 @@
 
 @end
 
-@interface Statue : Obstacle
+@interface Blacky : Obstacle
 
 @end
 
-@interface Blacky : Obstacle
+@interface Spiky : Obstacle
 
 @end
 

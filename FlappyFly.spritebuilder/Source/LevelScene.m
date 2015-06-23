@@ -204,6 +204,11 @@
     return YES;
 }
 
+-(BOOL) ccPhysicsCollisionBegin:(CCPhysicsCollisionPair *)pair projectileCollision:(CCNode *)projectile roofCollision:(CCNode *)roof {
+    [projectile removeFromParent];
+    return YES;
+}
+
 -(void) loseLife: (int)num {
     ((CCSprite*)[_healthSprites objectAtIndex:num]).visible = NO;
 }

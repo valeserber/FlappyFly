@@ -6,6 +6,7 @@
 @interface MainScene : CCScene <CCPhysicsCollisionDelegate>
 
 - (id)init;
++ (MainScene*) scene;
 
 @end
 #endif
