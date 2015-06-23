@@ -1,11 +1,12 @@
 #import "LevelScene.h"
+#import "PauseScene.h"
 #import "Obstacle.h"
 #import "cocos2d.h"
 
 @implementation LevelScene {
     CCNode *_hero;
     CCPhysicsNode *_physicsNode;
-    CCButton *_restartButton, *_continueButton;
+    CCButton *_restartButton, *_continueButton, *_pauseButton;
     CCNode *_health1, *_health2, *_health3, *_health4, *_health5;
     BOOL _impulse,_normalGravity, _gameFinished;
     NSMutableArray *_obstacles, *_healthSprites;
@@ -28,7 +29,6 @@
         _timeLeft = 30;
         _healthCount = 5;
         [_countTime setString:[NSString stringWithFormat:@"%i", _timeLeft]];
-        
         [self schedule:@selector(countDown:) interval:1.0f];
     }
     return self;
@@ -155,6 +155,12 @@
     [_healthSprites addObject:_health5];
     [_restartButton setTarget:self selector:@selector(onRestartClicked)];
     [_continueButton setTarget:self selector:@selector(onContinueClicked)];
+    _pauseButton = [CCButton buttonWithTitle:@"Pause" fontName:@"Helvetica" fontSize:15.0f];
+    _pauseButton.positionType = CCPositionTypeNormalized;
+    _pauseButton.position = ccp(0.65f, 0.95f);
+    _pauseButton.color = [CCColor whiteColor];
+    [_pauseButton setTarget:self selector:@selector(onPauseClicked)];
+    [self addChild:_pauseButton];
 }
 
 - (void) onRestartClicked {
@@ -163,6 +169,11 @@
 
 - (void) onContinueClicked {
     
+}
+
+- (void) onPauseClicked {
+    [[CCDirector sharedDirector] pushScene:self];
+    [[CCDirector sharedDirector] replaceScene:[PauseScene scene] withTransition: [CCTransition transitionCrossFadeWithDuration:1.0]];
 }
 
 - (void)touchBegan:(UITouch *)touch withEvent:(UIEvent *)event {

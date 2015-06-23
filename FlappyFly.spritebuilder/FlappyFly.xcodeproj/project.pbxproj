@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		396FF11C1B38AFBD00452B5B /* SemiWall.m in Sources */ = {isa = PBXBuildFile; fileRef = 396FF11B1B38AFBD00452B5B /* SemiWall.m */; };
+		396FF1271B38DA9000452B5B /* PauseScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 396FF1261B38DA9000452B5B /* PauseScene.m */; };
 		3971531C1B378675002CA00A /* FirstScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 3971531B1B378675002CA00A /* FirstScene.m */; };
 		397153271B37A8C5002CA00A /* SecondScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 397153261B37A8C5002CA00A /* SecondScene.m */; };
 		3971532C1B37A953002CA00A /* LevelScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 3971532B1B37A953002CA00A /* LevelScene.m */; };
@@ -157,6 +158,8 @@
 /* Begin PBXFileReference section */
 		396FF11B1B38AFBD00452B5B /* SemiWall.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SemiWall.m; path = Source/SemiWall.m; sourceTree = "<group>"; };
 		396FF11F1B38AFD100452B5B /* SemiWall.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SemiWall.h; path = Source/SemiWall.h; sourceTree = "<group>"; };
+		396FF1261B38DA9000452B5B /* PauseScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PauseScene.m; path = Source/PauseScene.m; sourceTree = "<group>"; };
+		396FF12A1B38DA9D00452B5B /* PauseScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PauseScene.h; path = Source/PauseScene.h; sourceTree = "<group>"; };
 		3971531B1B378675002CA00A /* FirstScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FirstScene.m; path = Source/FirstScene.m; sourceTree = "<group>"; };
 		3971531F1B3786B5002CA00A /* FirstScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstScene.h; sourceTree = "<group>"; };
 		397153261B37A8C5002CA00A /* SecondScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SecondScene.m; path = Source/SecondScene.m; sourceTree = "<group>"; };
@@ -469,6 +472,8 @@
 				397153261B37A8C5002CA00A /* SecondScene.m */,
 				3971532A1B37A8DA002CA00A /* SecondScene.h */,
 				3971532B1B37A953002CA00A /* LevelScene.m */,
+				396FF1261B38DA9000452B5B /* PauseScene.m */,
+				396FF12A1B38DA9D00452B5B /* PauseScene.h */,
 				3971532D1B37A972002CA00A /* LevelScene.h */,
 			);
 			name = Source;
@@ -849,6 +854,7 @@
 				396FF11C1B38AFBD00452B5B /* SemiWall.m in Sources */,
 				397153271B37A8C5002CA00A /* SecondScene.m in Sources */,
 				B73789871807631A0076A88C /* main.m in Sources */,
+				396FF1271B38DA9000452B5B /* PauseScene.m in Sources */,
 				3971531C1B378675002CA00A /* FirstScene.m in Sources */,
 				AC252AFF1B28ED1B0024A13B /* Obstacle.m in Sources */,
 				7A046D8C19E8A20E004C4763 /* MainScene.m in Sources */,
