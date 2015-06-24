@@ -70,5 +70,11 @@ typedef enum obstacles2 {
     [[CCDirector sharedDirector] popScene];
 }
 
+//- (void)onEnter
+//{
+//    [super onEnter];
+//    [self setPaused:NO];
+//}
+
 
 @end

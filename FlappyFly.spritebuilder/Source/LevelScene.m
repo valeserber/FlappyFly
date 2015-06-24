@@ -172,8 +172,7 @@
 }
 
 - (void) onPauseClicked {
-    [[CCDirector sharedDirector] pushScene:self];
-    [[CCDirector sharedDirector] replaceScene:[PauseScene scene] withTransition: [CCTransition transitionCrossFadeWithDuration:1.0]];
+    [[CCDirector sharedDirector] pushScene:[PauseScene scene] withTransition: [CCTransition transitionCrossFadeWithDuration:1.0]];
 }
 
 - (void)touchBegan:(UITouch *)touch withEvent:(UIEvent *)event {
