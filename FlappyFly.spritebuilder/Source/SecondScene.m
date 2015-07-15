@@ -33,6 +33,8 @@ typedef enum obstacles2 {
 - (void)didLoadFromCCB {
     _grounds = @[_ground1, _ground2, _ground3, _ground4];
     _roofs = @[_roof1, _roof2, _roof3, _roof4];
+    NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
+    [preferences setInteger:2 forKey:@"currentLevel"];
     [super didLoadFromCCB];
 }
 
@@ -61,20 +63,5 @@ typedef enum obstacles2 {
     }
     return obstacleName;
 }
-
-- (void) onRestartClicked {
-    [[CCDirector sharedDirector] replaceScene:[SecondScene scene] withTransition: [CCTransition transitionCrossFadeWithDuration:1.0]];
-}
-
-- (void) onContinueClicked {
-    [[CCDirector sharedDirector] popScene];
-}
-
-//- (void)onEnter
-//{
-//    [super onEnter];
-//    [self setPaused:NO];
-//}
-
 
 @end

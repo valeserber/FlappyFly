@@ -14,6 +14,9 @@
     self = [super init];
     if (!self) return(nil);
     self.userInteractionEnabled = YES;
+    OALSimpleAudio *audio = [OALSimpleAudio sharedInstance];
+    [audio stopAllEffects];
+    [audio playBg:@"Caketown.mp3" loop:YES];
     return self;
 }
 

@@ -28,12 +28,18 @@ typedef enum obstacles {
 -(id) init {
     self= [super init];
     [super initScroll: 80.f initGround: 3.5 initRoof: 2.5 initObsDist: 210 initImpulse: 100.f initInverseImpulse:-60.f];
+    
+    OALSimpleAudio *audio = [OALSimpleAudio sharedInstance];
+    [audio stopAllEffects];
+
     return self;
 }
 
 - (void)didLoadFromCCB {
     _grounds = @[_ground1, _ground2, _ground3, _ground4];
     _roofs = @[_roof1, _roof2, _roof3, _roof4];
+    NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
+    [preferences setInteger:1 forKey:@"currentLevel"];
     [super didLoadFromCCB];
 }
 
@@ -69,14 +75,6 @@ typedef enum obstacles {
             break;
     }
     return obstacleName;
-}
-
-- (void) onRestartClicked {
-    [[CCDirector sharedDirector] replaceScene:[FirstScene scene] withTransition: [CCTransition transitionCrossFadeWithDuration:1.0]];
-}
-
-- (void) onContinueClicked {
-    [[CCDirector sharedDirector] replaceScene:[SecondScene scene] withTransition: [CCTransition transitionCrossFadeWithDuration:1.0]];
 }
 
 @end

@@ -1,5 +1,9 @@
 #import "CCNode.h"
 
+#define TIME_LAPSE 30
+#define LEVEL_ONE 1
+#define LEVEL_TWO 2
+
 @interface LevelScene : CCScene <CCPhysicsCollisionDelegate> {
 
     @protected NSArray *_grounds, *_roofs;
@@ -15,9 +19,5 @@
         initInverseImpulse: (CGFloat) invImp;
 
 - (void)didLoadFromCCB;
-
-- (void) onRestartClicked;
-
-- (void) onContinueClicked;
 
 @end

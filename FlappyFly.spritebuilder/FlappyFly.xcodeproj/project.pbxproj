@@ -70,6 +70,15 @@
 		927F61BB196C771E000F43EF /* iPad-old.png in Resources */ = {isa = PBXBuildFile; fileRef = B71F5907188484E7003F4D28 /* iPad-old.png */; };
 		AC226C321B34F154002EAAE5 /* RoofStick.m in Sources */ = {isa = PBXBuildFile; fileRef = AC226C311B34F154002EAAE5 /* RoofStick.m */; };
 		AC252AFF1B28ED1B0024A13B /* Obstacle.m in Sources */ = {isa = PBXBuildFile; fileRef = AC252AFE1B28ED1B0024A13B /* Obstacle.m */; };
+		AC26213C1B3CC15E005C53A7 /* Caketown.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AC26213B1B3CC15E005C53A7 /* Caketown.mp3 */; };
+		AC26213E1B3CC358005C53A7 /* game-over.wav in Resources */ = {isa = PBXBuildFile; fileRef = AC26213D1B3CC358005C53A7 /* game-over.wav */; };
+		AC2621441B3CCA55005C53A7 /* background-music.wav in Resources */ = {isa = PBXBuildFile; fileRef = AC2621431B3CCA55005C53A7 /* background-music.wav */; };
+		AC2621461B3CCB9C005C53A7 /* crush.wav in Resources */ = {isa = PBXBuildFile; fileRef = AC2621451B3CCB9C005C53A7 /* crush.wav */; };
+		AC2621481B3CCCD2005C53A7 /* win-game.wav in Resources */ = {isa = PBXBuildFile; fileRef = AC2621471B3CCCD2005C53A7 /* win-game.wav */; };
+		AC26214A1B3CCDFD005C53A7 /* gravity-ball-sound.wav in Resources */ = {isa = PBXBuildFile; fileRef = AC2621491B3CCDFD005C53A7 /* gravity-ball-sound.wav */; };
+		ACA7A76C1B55C5B70017D202 /* GameOverScene.m in Sources */ = {isa = PBXBuildFile; fileRef = ACA7A76B1B55C5B70017D202 /* GameOverScene.m */; };
+		ACA7A7771B55FCD80017D202 /* HighestScoresTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = ACA7A7761B55FCD80017D202 /* HighestScoresTableView.m */; };
+		ACA7A77B1B5607AC0017D202 /* WinScene.m in Sources */ = {isa = PBXBuildFile; fileRef = ACA7A77A1B5607AC0017D202 /* WinScene.m */; };
 		B71F5911188484E7003F4D28 /* iPad-old.png in Resources */ = {isa = PBXBuildFile; fileRef = B71F5907188484E7003F4D28 /* iPad-old.png */; };
 		B71F5912188484E7003F4D28 /* iPad-old@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B71F5908188484E7003F4D28 /* iPad-old@2x.png */; };
 		B71F5913188484E7003F4D28 /* iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = B71F5909188484E7003F4D28 /* iPad.png */; };
@@ -194,6 +203,18 @@
 		AC226C311B34F154002EAAE5 /* RoofStick.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoofStick.m; sourceTree = "<group>"; };
 		AC252AFD1B28E5400024A13B /* Obstacle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Obstacle.h; sourceTree = "<group>"; };
 		AC252AFE1B28ED1B0024A13B /* Obstacle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Obstacle.m; sourceTree = "<group>"; };
+		AC26213B1B3CC15E005C53A7 /* Caketown.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Caketown.mp3; sourceTree = "<group>"; };
+		AC26213D1B3CC358005C53A7 /* game-over.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "game-over.wav"; sourceTree = "<group>"; };
+		AC2621431B3CCA55005C53A7 /* background-music.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "background-music.wav"; sourceTree = "<group>"; };
+		AC2621451B3CCB9C005C53A7 /* crush.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = crush.wav; sourceTree = "<group>"; };
+		AC2621471B3CCCD2005C53A7 /* win-game.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "win-game.wav"; sourceTree = "<group>"; };
+		AC2621491B3CCDFD005C53A7 /* gravity-ball-sound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "gravity-ball-sound.wav"; sourceTree = "<group>"; };
+		ACA7A76B1B55C5B70017D202 /* GameOverScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameOverScene.m; sourceTree = "<group>"; };
+		ACA7A76F1B55C5DF0017D202 /* GameOverScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameOverScene.h; sourceTree = "<group>"; };
+		ACA7A7761B55FCD80017D202 /* HighestScoresTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HighestScoresTableView.m; sourceTree = "<group>"; };
+		ACA7A7781B55FD270017D202 /* HighestScoresTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HighestScoresTableView.h; sourceTree = "<group>"; };
+		ACA7A7791B5607850017D202 /* WinScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WinScene.h; sourceTree = "<group>"; };
+		ACA7A77A1B5607AC0017D202 /* WinScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WinScene.m; sourceTree = "<group>"; };
 		B71F5907188484E7003F4D28 /* iPad-old.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iPad-old.png"; path = "Icons/iPad-old.png"; sourceTree = "<group>"; };
 		B71F5908188484E7003F4D28 /* iPad-old@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iPad-old@2x.png"; path = "Icons/iPad-old@2x.png"; sourceTree = "<group>"; };
 		B71F5909188484E7003F4D28 /* iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iPad.png; path = Icons/iPad.png; sourceTree = "<group>"; };
@@ -454,9 +475,23 @@
 			name = libs;
 			sourceTree = "<group>";
 		};
+		AC2621351B3CBF22005C53A7 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				AC26213B1B3CC15E005C53A7 /* Caketown.mp3 */,
+				AC26213D1B3CC358005C53A7 /* game-over.wav */,
+				AC2621431B3CCA55005C53A7 /* background-music.wav */,
+				AC2621451B3CCB9C005C53A7 /* crush.wav */,
+				AC2621471B3CCCD2005C53A7 /* win-game.wav */,
+				AC2621491B3CCDFD005C53A7 /* gravity-ball-sound.wav */,
+			);
+			name = Sounds;
+			sourceTree = "<group>";
+		};
 		B737893C1807616C0076A88C /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				AC2621351B3CBF22005C53A7 /* Sounds */,
 				7A40362019DDEF0D007B6E8F /* Platforms */,
 				B7378992180767190076A88C /* MainScene.h */,
 				B7378993180767190076A88C /* MainScene.m */,
@@ -472,6 +507,12 @@
 				397153261B37A8C5002CA00A /* SecondScene.m */,
 				3971532A1B37A8DA002CA00A /* SecondScene.h */,
 				3971532B1B37A953002CA00A /* LevelScene.m */,
+				ACA7A7761B55FCD80017D202 /* HighestScoresTableView.m */,
+				ACA7A7781B55FD270017D202 /* HighestScoresTableView.h */,
+				ACA7A76B1B55C5B70017D202 /* GameOverScene.m */,
+				ACA7A7791B5607850017D202 /* WinScene.h */,
+				ACA7A77A1B5607AC0017D202 /* WinScene.m */,
+				ACA7A76F1B55C5DF0017D202 /* GameOverScene.h */,
 				396FF1261B38DA9000452B5B /* PauseScene.m */,
 				396FF12A1B38DA9D00452B5B /* PauseScene.h */,
 				3971532D1B37A972002CA00A /* LevelScene.h */,
@@ -763,16 +804,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				B71F5919188484E7003F4D28 /* Settings.png in Resources */,
+				AC2621461B3CCB9C005C53A7 /* crush.wav in Resources */,
 				B7378978180762440076A88C /* Default@2x.png in Resources */,
+				AC2621481B3CCCD2005C53A7 /* win-game.wav in Resources */,
 				B71F5914188484E7003F4D28 /* iPad@2x.png in Resources */,
 				B71F5913188484E7003F4D28 /* iPad.png in Resources */,
+				AC2621441B3CCA55005C53A7 /* background-music.wav in Resources */,
 				B71F5912188484E7003F4D28 /* iPad-old@2x.png in Resources */,
 				B71F5916188484E7003F4D28 /* iPhone-old@2x.png in Resources */,
+				AC26213C1B3CC15E005C53A7 /* Caketown.mp3 in Resources */,
+				AC26214A1B3CCDFD005C53A7 /* gravity-ball-sound.wav in Resources */,
 				B737893B180761570076A88C /* Published-iOS in Resources */,
 				B71F591A188484E7003F4D28 /* Settings@2x.png in Resources */,
 				B7378976180762440076A88C /* Default-Landscape~ipad.png in Resources */,
 				B71F5915188484E7003F4D28 /* iPhone-old.png in Resources */,
 				B71F5917188484E7003F4D28 /* iPhone.png in Resources */,
+				AC26213E1B3CC358005C53A7 /* game-over.wav in Resources */,
 				B7378975180762440076A88C /* Default-568h@2x.png in Resources */,
 				B71F5918188484E7003F4D28 /* iPhone@2x.png in Resources */,
 				B7378977180762440076A88C /* Default.png in Resources */,
@@ -853,14 +900,17 @@
 			files = (
 				396FF11C1B38AFBD00452B5B /* SemiWall.m in Sources */,
 				397153271B37A8C5002CA00A /* SecondScene.m in Sources */,
+				ACA7A76C1B55C5B70017D202 /* GameOverScene.m in Sources */,
 				B73789871807631A0076A88C /* main.m in Sources */,
 				396FF1271B38DA9000452B5B /* PauseScene.m in Sources */,
+				ACA7A7771B55FCD80017D202 /* HighestScoresTableView.m in Sources */,
 				3971531C1B378675002CA00A /* FirstScene.m in Sources */,
 				AC252AFF1B28ED1B0024A13B /* Obstacle.m in Sources */,
 				7A046D8C19E8A20E004C4763 /* MainScene.m in Sources */,
 				3971532C1B37A953002CA00A /* LevelScene.m in Sources */,
 				AC226C321B34F154002EAAE5 /* RoofStick.m in Sources */,
 				5B121038197487F2004C1E1D /* AppDelegate.m in Sources */,
+				ACA7A77B1B5607AC0017D202 /* WinScene.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -12,6 +12,10 @@
 }
 
 - (void)didLoadFromCCB {
+    
+    OALSimpleAudio *audio = [OALSimpleAudio sharedInstance];
+    [audio playBg:@"Caketown.mp3" loop:YES];
+
     _resumeButton = [CCButton buttonWithTitle:@"Resume" fontName:@"Helvetica" fontSize:18.0f];
     _resumeButton.positionType = CCPositionTypeNormalized;
     _resumeButton.position = ccp(0.5f, 0.5f);

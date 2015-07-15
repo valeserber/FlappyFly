@@ -1,19 +1,22 @@
 #import "LevelScene.h"
 #import "PauseScene.h"
 #import "Obstacle.h"
+#import "GameOverScene.h"
+#import "WinScene.h"
 #import "cocos2d.h"
+
 
 @implementation LevelScene {
     CCNode *_hero;
     CCPhysicsNode *_physicsNode;
-    CCButton *_restartButton, *_continueButton, *_pauseButton;
+    CCButton *_pauseButton;
     CCNode *_health1, *_health2, *_health3, *_health4, *_health5;
     BOOL _impulse,_normalGravity, _gameFinished;
     NSMutableArray *_obstacles, *_healthSprites;
     NSTimeInterval _sinceTouch, _sinceLastObstacle, _checkOffScreenTime;
     int _healthCount, i, _timeLeft;
     CGFloat _heroImpulse,_heroAngularImpulse, _scrollSpeed, _restoreImpulse, _inverseImpulse;
-    CCLabelTTF *_countTime, *_gameLost, *_gameWon;
+    CCLabelTTF *_countTime;
     CGFloat _groundVar, _roofVar, _obstDistVar;
 }
 
@@ -26,8 +29,12 @@
 -(id) init {
     if( (self=[super init] )) {
         _gameFinished = false;
-        _timeLeft = 30;
+        _timeLeft = TIME_LAPSE;
         _healthCount = 5;
+        
+        OALSimpleAudio *audio = [OALSimpleAudio sharedInstance];
+        [audio playBg:@"background-music.wav" loop:YES];
+
         [_countTime setString:[NSString stringWithFormat:@"%i", _timeLeft]];
         [self schedule:@selector(countDown:) interval:1.0f];
     }
@@ -136,10 +143,6 @@
 
 - (void)didLoadFromCCB {
     self.userInteractionEnabled = YES;
-    _restartButton.visible = NO;
-    _gameLost.visible = NO;
-    _gameWon.visible = NO;
-    _continueButton.visible = NO;
     _physicsNode.collisionDelegate = self;
     _obstacles = [NSMutableArray array];
     _sinceLastObstacle = 0.f;
@@ -153,8 +156,6 @@
     [_healthSprites addObject:_health3];
     [_healthSprites addObject:_health4];
     [_healthSprites addObject:_health5];
-    [_restartButton setTarget:self selector:@selector(onRestartClicked)];
-    [_continueButton setTarget:self selector:@selector(onContinueClicked)];
     _pauseButton = [CCButton buttonWithTitle:@"Pause" fontName:@"Helvetica" fontSize:15.0f];
     _pauseButton.positionType = CCPositionTypeNormalized;
     _pauseButton.position = ccp(0.65f, 0.95f);
@@ -163,13 +164,6 @@
     [self addChild:_pauseButton];
 }
 
-- (void) onRestartClicked {
-    
-}
-
-- (void) onContinueClicked {
-    
-}
 
 - (void) onPauseClicked {
     [[CCDirector sharedDirector] pushScene:[PauseScene scene] withTransition: [CCTransition transitionCrossFadeWithDuration:1.0]];
@@ -199,6 +193,8 @@
 
 -(BOOL) ccPhysicsCollisionBegin:(CCPhysicsCollisionPair *)pair gravityBallCollision:(CCNode *)gravityBall heroCollision:(CCNode *)hero {
     [gravityBall removeFromParent];
+    OALSimpleAudio *audio = [OALSimpleAudio sharedInstance];
+    [audio playEffect:@"gravity-ball-sound.wav"];
     [self changeGravity];
     return YES;
 }
@@ -214,14 +210,49 @@
 
 -(void) loseGame {
     _gameFinished = true;
-    _restartButton.visible = YES;
-    _gameLost.visible = YES;
+    OALSimpleAudio *audio = [OALSimpleAudio sharedInstance];
+    [audio playEffect:@"game-over.wav"];
+    
+    NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
+    NSInteger currentLevel = (NSInteger)[preferences integerForKey:@"currentLevel"];
+    NSString *highestScore;
+    NSLog(@"%d",(int)currentLevel);
+    int currentScore = (int)currentLevel*(TIME_LAPSE - _timeLeft);
+    if(currentLevel == LEVEL_ONE){
+        highestScore = @"highestScoreLevelOne";
+    }
+    else {
+        highestScore = @"highestScoreLevelTwo";
+    }
+    if(currentScore > (int)[preferences integerForKey:highestScore]){
+        [preferences setInteger:currentScore forKey:highestScore];
+    }
+    [preferences setInteger:currentScore forKey:@"currentScore"];
+    [[CCDirector sharedDirector] replaceScene:[GameOverScene scene]
+                                 withTransition:[CCTransition transitionCrossFadeWithDuration:1.0]];
 }
 
 -(void) winGame {
     _gameFinished = true;
-    _gameWon.visible = YES;
-    _continueButton.visible = YES;
+    OALSimpleAudio *audio = [OALSimpleAudio sharedInstance];
+    [audio playEffect:@"win-game.wav"];
+    
+    NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
+    NSInteger currentLevel = (NSInteger)[preferences integerForKey:@"currentLevel"];
+    NSString *highestScore;
+    int currentScore = (int)currentLevel*(TIME_LAPSE - _timeLeft);
+    if(currentLevel == LEVEL_ONE){
+        highestScore = @"highestScoreLevelOne";
+    }
+    else {
+        highestScore = @"highestScoreLevelTwo";
+    }
+    if(currentScore > (int)[preferences integerForKey:highestScore]){
+        [preferences setInteger:currentScore forKey:highestScore];
+    }
+    [preferences setInteger:currentScore forKey:@"currentScore"];
+    [[CCDirector sharedDirector] replaceScene:[WinScene scene]
+                               withTransition:[CCTransition transitionCrossFadeWithDuration:1.0]];
 }
 
 -(void) checkOffScreen {
@@ -232,13 +263,32 @@
     }
 }
 
--(BOOL)heroCrush {
-    
+-(void) checkHighestScores:(NSMutableArray *)scores forCurrentScore:(int)currentScore {
+    if([scores count]< 5){
+        [scores insertObject:[NSNumber numberWithInt:currentScore] atIndex:[scores count]];
+    }
+    else {
+        int min = 0;
+        int j;
+        for(j=0; i < [scores count]; j++) {
+            if([scores objectAtIndex:j] < [scores objectAtIndex:min]) {
+                min = j;
+            }
+        }
+        if([[scores objectAtIndex:min] intValue] < currentScore){
+            [scores insertObject:[NSNumber numberWithInt: currentScore] atIndex:min];
+        }
+    }
+    NSLog(scores);
+}
+
+-(BOOL) heroCrush {
     CCParticleSystem *explosion = (CCParticleSystem *)[CCBReader load:@"heroCrush"];
     explosion.autoRemoveOnFinish = TRUE;
     explosion.position = _hero.position;
     [_physicsNode addChild:explosion];
-    
+    OALSimpleAudio *audio = [OALSimpleAudio sharedInstance];
+    [audio playEffect:@"crush.wav"];
     if (_gameFinished == true) return NO;
     if (_healthCount != 1) {
         _healthCount--;
